@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2dcdaf47-bdc7-4a24-b076-a8c2747e1e16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ui/SocialMediaIcon/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/utils/FontAwsome/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactInfo/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactInfo/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Education/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Experience/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/MainNav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/MainNav/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeroBanner/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeroBanner/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Newsletter/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Newsletter/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Posts/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Posts/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SEO/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SEO/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Skills/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Skills/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Testimonials/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Testimonials/styles.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/InfoBlock/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/InfoBlock/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/ProgressBar/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/ProgressBar/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/TitleSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/TitleSection/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/blog/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/blog/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/contacts/contact-1/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/contacts/contact-2/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/contacts/contact-3/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/contacts/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/education/education-1/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/education/education-2/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/education/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/experieces/experience-1/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/experieces/experience-2/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/experieces/experience-3/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/experieces/experience-4/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/experieces/experience-5/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/experieces/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/hero/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/newsletter/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/services/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/services/service-1/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/services/service-2/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/services/service-3/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/services/service-4/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-1/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-2/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-3/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-4/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-5/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-6/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-7/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills/skill-8/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/testimonials/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/testimonials/testimonial-1/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/testimonials/testimonial-1/testimonial-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/testimonials/testimonial-2/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/testimonials/testimonial-2/testimonial-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/testimonials/testimonial-3/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/testimonials/testimonial-3/testimonial-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/resume.tsx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>twitter</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NamedScopeManager">
+    <order>
+      <scope name="Source Files" />
+    </order>
+  </component>
+  <component name="ProjectId" id="1TZegsoPZ8NFFZ83z7Deb3zJDMi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/ui" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2dcdaf47-bdc7-4a24-b076-a8c2747e1e16" name="Default Changelist" comment="" />
+      <created>1545849697248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545849697248</updated>
+      <workItem from="1545849698726" duration="3629000" />
+      <workItem from="1546580649589" duration="359000" />
+      <workItem from="1573672161182" duration="2920000" />
+      <workItem from="1607209329459" duration="37000" />
+      <workItem from="1607209389142" duration="3252000" />
+      <workItem from="1607290010419" duration="12583000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Source Files</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.30759332" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="Source Files" />
+          </order>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
