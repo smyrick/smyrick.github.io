@@ -4,6 +4,36 @@ module.exports = {
     subtitle: `Software Developer and Fitness Coach`,
     description: `A minimal blog starter built with Gatsbyjs. The needed Gatsby files are included.`,
     author: `@smyrick`,
+    socialMedia: [
+      {
+        name: 'GitHub',
+        prefix: 'fab',
+        icon: 'github',
+        iconClassName: 'github',
+        url: 'https://github.com/smyrick',
+      },
+      {
+        name: 'Twitter',
+        prefix: 'fab',
+        icon: 'twitter',
+        iconClassName: 'twitter',
+        url: 'https://twitter.com/shanemyrick',
+      },
+      {
+        name: 'LinkedIn',
+        prefix: 'fab',
+        icon: 'linkedin',
+        iconClassName: 'linkedin',
+        url: 'https://www.linkedin.com/in/shanemyrick/',
+      },
+      {
+        name: 'e-mail',
+        prefix: 'fas',
+        icon: 'envelope',
+        iconClassName: 'mail',
+        url: 'mailto:mail@shanemyrick.com',
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-fontawesome-css`,

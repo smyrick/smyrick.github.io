@@ -26,7 +26,7 @@ const HeaderDate = styled.h3`
   color: #606060;
 `;
 
-// STYLE THE TAGS INSIDE THE MARKDOWN HERE
+// Markdown styling is handled in this section
 const MarkdownContent = styled.div`
   a {
     text-decoration: none;

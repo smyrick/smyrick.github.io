@@ -29,17 +29,19 @@ const Footer = styled.footer`
   justify-content: center;
 `;
 
+const SiteTitleQuery = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
+    query={SiteTitleQuery}
     render={(data) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
@@ -47,7 +49,8 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <Footer>
             <p>
-              © {new Date().getFullYear()}, Built with
+              © {new Date().getFullYear()} {data.site.siteMetadata.title}, Built
+              with
               {` `}
             </p>
             <GatsbyLink href="https://www.gatsbyjs.org">Gatsby</GatsbyLink>
