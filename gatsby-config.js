@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Shane Myrick`,
     subtitle: `Software Developer and Fitness Coach`,
-    description: `A minimal blog starter built with Gatsbyjs. The needed Gatsby files are included.`,
-    author: `@smyrick`,
+    description: `Shane Myrick's personal site and blogs`,
+    author: `@shanemyrick`,
     socialMedia: [
       {
         name: 'GitHub',
