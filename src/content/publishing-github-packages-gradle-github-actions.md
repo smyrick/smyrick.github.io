@@ -3,7 +3,7 @@ title: "Publishing to GitHub Packages with Gradle and GitHub Actions"
 date: "2019-12-04"
 draft: false
 path: "/blog/publishing-github-packages-gradle-github-actions"
-featuredImage: ../images/github-actions.jpeg
+featuredImage: ../images/github-actions.png
 ---
 
 In November 2019 GitHub released [GitHub Packages](https://github.com/features/packages) and [GitHub Actions](https://github.com/features/actions) to the general public. Packages allows library owners to publish their code directly to GitHub. The aim is to be another package hosting repository like [npmjs.com](https://www.npmjs.com/) or [Maven Central](https://mvnrepository.com/repos/central), but now the packages and code can live side-by-side. GitHub Packages supports multiple package types, including Docker, RubyGems, NPM, Maven, and NuGet to name a few.

@@ -62,9 +62,7 @@ module.exports = {
           resolve: `gatsby-remark-prismjs`,
           options: {
             aliases: {
-              sh: "bash",
-              js: "javascript",
-              kt: "kotlin"
+              js: "javascript"
             },
             showLineNumbers: false
           }
