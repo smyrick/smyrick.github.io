@@ -130,7 +130,7 @@ ______
 
 That wraps up this short post. I hope you will find the information helpful so you don’t have to spend an afternoon reading through the GitHub documentation as I did (which is still very good).
 
-Feel free to share your own experience with GitHub Actions and Packages with me on Twitter and follow me for future articles! 😃
+Feel free to share your own experience with GitHub Actions and Packages with me on [Twitter](https://twitter.com/shanemyrick) and follow me for future articles! 😃
 
 ______
 
