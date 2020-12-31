@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Img from 'gatsby-image';
 
 const Content = styled.div`
   margin: 0 auto;
@@ -24,6 +25,10 @@ const MarkedHeader = styled.h1`
 const HeaderDate = styled.h3`
   margin-top: 10px;
   color: #606060;
+`;
+
+const FeaturedImage = styled.div`
+  margin-bottom: 1.45rem;
 `;
 
 // Markdown styling is handled in this section
@@ -48,10 +53,16 @@ const MarkdownContent = styled.div`
   a > code:hover {
     text-decoration: underline;
   }
+
+  .gatsby-highlight {
+    margin-bottom: 1.45rem;
+  }
 `;
 
 export default ({ data }) => {
   const post = data.markdownRemark;
+  const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
+
   return (
     <Layout>
       <SEO
@@ -63,6 +74,9 @@ export default ({ data }) => {
         <HeaderDate>
           {post.frontmatter.date} - {post.fields.readingTime.text}
         </HeaderDate>
+        <FeaturedImage>
+          <Img fluid={featuredImgFluid} alt="Featured image" />
+        </FeaturedImage>
         <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
       </Content>
     </Layout>
@@ -78,6 +92,13 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM, YYYY")
         path
         title
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       fields {
         readingTime {
