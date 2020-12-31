@@ -1,0 +1,541 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.5a1e569e02a5a404c497.css" id="gatsby-global-css">code[class*=language-],pre[class*=language-]{color:#d4d4d4;font-size:13px;text-shadow:none;font-family:Menlo,Monaco,Consolas,Andale Mono,Ubuntu Mono,Courier New,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#75a7ca}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;background:#1e1e1e}:not(pre)>code[class*=language-]{padding:.1em .3em;border-radius:.3em;color:#db4c69;background:#f9f2f4}.namespace{opacity:.7}.token.doctype .token.doctype-tag{color:#569cd6}.token.doctype .token.name{color:#9cdcfe}.token.comment,.token.prolog{color:#6a9955}.language-html .language-css .token.punctuation,.language-html .language-javascript .token.punctuation,.token.punctuation{color:#d4d4d4}.token.boolean,.token.constant,.token.inserted,.token.number,.token.property,.token.symbol,.token.tag,.token.unit{color:#b5cea8}.token.attr-name,.token.builtin,.token.char,.token.deleted,.token.selector,.token.string{color:#ce9178}.language-css .token.string.url{text-decoration:underline}.token.entity,.token.operator{color:#d4d4d4}.token.operator.arrow{color:#569cd6}.token.atrule{color:#ce9178}.token.atrule .token.rule{color:#c586c0}.token.atrule .token.url{color:#9cdcfe}.token.atrule .token.url .token.function{color:#dcdcaa}.token.atrule .token.url .token.punctuation{color:#d4d4d4}.token.keyword{color:#569cd6}.token.keyword.control-flow,.token.keyword.module{color:#c586c0}.token.function,.token.function .token.maybe-class-name{color:#dcdcaa}.token.regex{color:#d16969}.token.important{color:#569cd6}.token.italic{font-style:italic}.token.constant{color:#9cdcfe}.token.class-name,.token.maybe-class-name{color:#4ec9b0}.token.console,.token.interpolation,.token.parameter{color:#9cdcfe}.token.boolean,.token.punctuation.interpolation-punctuation{color:#569cd6}.token.exports .token.maybe-class-name,.token.imports .token.maybe-class-name,.token.property,.token.variable{color:#9cdcfe}.token.escape,.token.selector{color:#d7ba7d}.token.tag{color:#569cd6}.token.cdata,.token.tag .token.punctuation{color:grey}.token.attr-name{color:#9cdcfe}.token.attr-value,.token.attr-value .token.punctuation{color:#ce9178}.token.attr-value .token.punctuation.attr-equals{color:#d4d4d4}.token.entity{color:#569cd6}.token.namespace{color:#4ec9b0}code[class*=language-javascript],code[class*=language-jsx],code[class*=language-tsx],code[class*=language-typescript],pre[class*=language-javascript],pre[class*=language-jsx],pre[class*=language-tsx],pre[class*=language-typescript]{color:#9cdcfe}code[class*=language-css],pre[class*=language-css]{color:#ce9178}code[class*=language-html],pre[class*=language-html]{color:#d4d4d4}.language-regex .token.anchor{color:#dcdcaa}.language-html .token.punctuation{color:grey}pre[data-line]{position:relative}pre[class*=language-]>code[class*=language-]{position:relative;z-index:1}.line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:#f7ebc6;box-shadow:inset 5px 0 0 #f7d87c;z-index:0;pointer-events:none;line-height:inherit;white-space:pre}pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}@font-face{font-family:Nunito;font-style:normal;font-display:swap;font-weight:200;src:local("Nunito Extra Light "),local("Nunito-Extra Light"),url(/static/nunito-latin-200-2dbeb8d854e77c952cb636cb14a151c4.woff2) format("woff2"),url(/static/nunito-latin-200-e53a21a8bf1b97fb9900e8d5c5bfbc14.woff) format("woff")}@font-face{font-family:Nunito;font-style:italic;font-display:swap;font-weight:200;src:local("Nunito Extra Light italic"),local("Nunito-Extra Lightitalic"),url(/static/nunito-latin-200italic-bbdf1c37c56e1bfaf618b9a4ee46d508.woff2) format("woff2"),url(/static/nunito-latin-200italic-2bcb70df023a72cb0a5864c993d03bfc.woff) format("woff")}@font-face{font-family:Nunito;font-style:normal;font-display:swap;font-weight:300;src:local("Nunito Light "),local("Nunito-Light"),url(/static/nunito-latin-300-98aabf9aea1a55e2390109ad1efddce3.woff2) format("woff2"),url(/static/nunito-latin-300-97e0d2fc0422400a6e7be8f1b5e4949e.woff) format("woff")}@font-face{font-family:Nunito;font-style:italic;font-display:swap;font-weight:300;src:local("Nunito Light italic"),local("Nunito-Lightitalic"),url(/static/nunito-latin-300italic-ac71e7f9cd408dd512f6a6bbbd64eb51.woff2) format("woff2"),url(/static/nunito-latin-300italic-8646bd832f738c016b56b146af6fcd46.woff) format("woff")}@font-face{font-family:Nunito;font-style:normal;font-display:swap;font-weight:400;src:local("Nunito Regular "),local("Nunito-Regular"),url(/static/nunito-latin-400-508e414e3d3bc41666826fee46c7d881.woff2) format("woff2"),url(/static/nunito-latin-400-e5875b853d135f2a82ceae7ac537b6f4.woff) format("woff")}@font-face{font-family:Nunito;font-style:italic;font-display:swap;font-weight:400;src:local("Nunito Regular italic"),local("Nunito-Regularitalic"),url(/static/nunito-latin-400italic-28f555d9a5c83842f03988ed14f00ef5.woff2) format("woff2"),url(/static/nunito-latin-400italic-09ce3100c075ee04f293b9191c88f156.woff) format("woff")}@font-face{font-family:Nunito;font-style:normal;font-display:swap;font-weight:600;src:local("Nunito SemiBold "),local("Nunito-SemiBold"),url(/static/nunito-latin-600-8b8871e482a76d7e9327b02131564af7.woff2) format("woff2"),url(/static/nunito-latin-600-f894e279899f0cda9d06e32b78783399.woff) format("woff")}@font-face{font-family:Nunito;font-style:italic;font-display:swap;font-weight:600;src:local("Nunito SemiBold italic"),local("Nunito-SemiBolditalic"),url(/static/nunito-latin-600italic-9f930640316b0b9e8b088958d8f7aa5c.woff2) format("woff2"),url(/static/nunito-latin-600italic-9d150271cf30aefb8609dff4c9ece978.woff) format("woff")}@font-face{font-family:Nunito;font-style:normal;font-display:swap;font-weight:700;src:local("Nunito Bold "),local("Nunito-Bold"),url(/static/nunito-latin-700-a22acb48f45d03d672bf5b9389363a83.woff2) format("woff2"),url(/static/nunito-latin-700-7d90308f9bdf7321be5e28d017a5ade5.woff) format("woff")}@font-face{font-family:Nunito;font-style:italic;font-display:swap;font-weight:700;src:local("Nunito Bold italic"),local("Nunito-Bolditalic"),url(/static/nunito-latin-700italic-4507a1361620a66827e217855c9fff24.woff2) format("woff2"),url(/static/nunito-latin-700italic-26556875512fee1b823bc6117c076358.woff) format("woff")}@font-face{font-family:Nunito;font-style:normal;font-display:swap;font-weight:800;src:local("Nunito ExtraBold "),local("Nunito-ExtraBold"),url(/static/nunito-latin-800-eaa946756e91563b4b7d766de2f5b7ed.woff2) format("woff2"),url(/static/nunito-latin-800-5fa815a069b40c78f26863eaabcd6d2f.woff) format("woff")}@font-face{font-family:Nunito;font-style:italic;font-display:swap;font-weight:800;src:local("Nunito ExtraBold italic"),local("Nunito-ExtraBolditalic"),url(/static/nunito-latin-800italic-b9cd56a25c86d089cc18bc92dbad167a.woff2) format("woff2"),url(/static/nunito-latin-800italic-2e1a4979ec23066532d157ab5fe4ccc5.woff) format("woff")}@font-face{font-family:Nunito;font-style:normal;font-display:swap;font-weight:900;src:local("Nunito Black "),local("Nunito-Black"),url(/static/nunito-latin-900-f82c6fb49774f4e4caa570640e164320.woff2) format("woff2"),url(/static/nunito-latin-900-19de37363cebfe020de6d4abdbb38c2e.woff) format("woff")}@font-face{font-family:Nunito;font-style:italic;font-display:swap;font-weight:900;src:local("Nunito Black italic"),local("Nunito-Blackitalic"),url(/static/nunito-latin-900italic-6f10930c04eec040ac4ffb4890191149.woff2) format("woff2"),url(/static/nunito-latin-900italic-ca56cb53793f0f9084f26315012cefd8.woff) format("woff")}code{background-color:rgba(0,0,0,.04)}body{margin:0;font-family:Nunito,Avenir,Helvetica,"sans-serif";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{font-style:normal;color:rgba(0,0,0,.8);-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.45em georgia,serif;box-sizing:border-box;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{color:rgba(0,0,0,.8);font-weight:400;word-wrap:break-word;-webkit-font-kerning:normal;font-kerning:normal;-ms-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt"}img{max-width:100%;padding:0;margin:0 0 1.45rem}h1{font-size:2.25rem}h1,h2{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h6{font-size:.78405rem}hgroup{padding:0;margin:0 0 1.45rem}ol,ul{padding:0;margin:0 0 1.45rem 1.45rem;list-style-position:outside;list-style-image:none}dd,dl,figure,p{padding:0;margin:0 0 1.45rem}pre{margin:0 0 1.45rem;font-size:.8rem;line-height:1.42;background:rgba(0,0,0,.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.45rem}table{font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%}fieldset,table{padding:0;margin:0 0 1.45rem}blockquote{padding:0;margin:0 1.45rem 1.45rem}form,iframe,noscript{padding:0;margin:0 0 1.45rem}hr{padding:0;margin:0 0 calc(1.45rem - 1px);background:rgba(0,0,0,.2);border:none;height:1px}address{padding:0;margin:0 0 1.45rem}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-left:1.45rem;margin-bottom:.725rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.8rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{border-bottom:1px solid rgba(0,0,0,.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:0}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:" "}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}a::selection,h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,h6::selection,p::selection{background:#000}.gatsby-highlight{background-color:#1d1f21;border-radius:.3em;margin:.5em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-].line-numbers{padding:0 0 0 2.8em;overflow:initial}@media only screen and (max-width:480px){html{font-size:100%}}</style><meta name="generator" content="Gatsby 2.29.3"/><style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><title data-react-helmet="true">Publishing to GitHub Packages with Gradle and GitHub Actions | Shane Myrick</title><meta data-react-helmet="true" name="description" content="In November 2019 GitHub released GitHub Packages and GitHub Actions to the general public. Packages allows library owners to publish their code directly to…"/><meta data-react-helmet="true" property="og:title" content="Publishing to GitHub Packages with Gradle and GitHub Actions"/><meta data-react-helmet="true" property="og:description" content="In November 2019 GitHub released GitHub Packages and GitHub Actions to the general public. Packages allows library owners to publish their code directly to…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="@shanemyrick"/><meta data-react-helmet="true" name="twitter:title" content="Publishing to GitHub Packages with Gradle and GitHub Actions"/><meta data-react-helmet="true" name="twitter:description" content="In November 2019 GitHub released GitHub Packages and GitHub Actions to the general public. Packages allows library owners to publish their code directly to…"/><link rel="icon" href="/favicon-32x32.png?v=4a9773549091c227cd2eb82ccd9c5e3a" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link as="script" rel="preload" href="/webpack-runtime-0e946721d88aeb66471f.js"/><link as="script" rel="preload" href="/framework-305b3707783ccc9d7ca6.js"/><link as="script" rel="preload" href="/app-1b9f2b13f5d7b331b8bd.js"/><link as="script" rel="preload" href="/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/ba67a7eff56464363ff47824b45e68473bccefc5-8a8efa7b833c6f062d60.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-d7ef6a1190d73708b6d7.js"/><link as="fetch" rel="preload" href="/page-data/blog/publishing-github-packages-gradle-github-actions/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3649515864.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="1pyi7sa">.css-1pyi7sa{background:transparent;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><header class="css-1pyi7sa eiuu3563"><style data-emotion-css="k1grrt">.css-k1grrt{max-width:860px;padding:1rem 1.0875rem;font-size:1.2rem;}</style><div class="css-k1grrt eiuu3560"><p><style data-emotion-css="bozxzl">.css-bozxzl{color:black;margin-left:15px;-webkit-text-decoration:none;text-decoration:none;display:inline-block;position:relative;margin-left:0;}.css-bozxzl::after{content:'';position:absolute;width:100%;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);height:2px;bottom:0;left:0;background-color:rgba(0,0,0,0.8);-webkit-transform-origin:bottom right;-ms-transform-origin:bottom right;transform-origin:bottom right;-webkit-transition:-webkit-transform 0.4s cubic-bezier(0.86,0,0.07,1);-webkit-transition:transform 0.4s cubic-bezier(0.86,0,0.07,1);transition:transform 0.4s cubic-bezier(0.86,0,0.07,1);}.css-bozxzl:hover::after{-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);-webkit-transform-origin:bottom left;-ms-transform-origin:bottom left;transform-origin:bottom left;}</style><a class="css-bozxzl eiuu3562" href="/">Shane Myrick</a><style data-emotion-css="rr72w0">.css-rr72w0{color:black;margin-left:15px;-webkit-text-decoration:none;text-decoration:none;display:inline-block;position:relative;}.css-rr72w0::after{content:'';position:absolute;width:100%;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);height:2px;bottom:0;left:0;background-color:rgba(0,0,0,0.8);-webkit-transform-origin:bottom right;-ms-transform-origin:bottom right;transform-origin:bottom right;-webkit-transition:-webkit-transform 0.4s cubic-bezier(0.86,0,0.07,1);-webkit-transition:transform 0.4s cubic-bezier(0.86,0,0.07,1);transition:transform 0.4s cubic-bezier(0.86,0,0.07,1);}.css-rr72w0:hover::after{-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);-webkit-transform-origin:bottom left;-ms-transform-origin:bottom left;transform-origin:bottom left;}</style><a class="css-rr72w0 eiuu3561" href="/blog">Blog</a></p></div></header><style data-emotion-css="1813l62">.css-1813l62{margin:0 auto;max-width:860px;padding:0 1.0875rem 1rem;padding-top:0;}</style><div class="css-1813l62 ezkpj560"><main><style data-emotion-css="hu0znc">.css-hu0znc{margin:0 auto;max-width:860px;padding:1.45rem 1.0875rem;}</style><div class="css-hu0znc ecgn8ig0"><style data-emotion-css="1q2z4uj">.css-1q2z4uj{display:inline;border-radius:1em 0 1em 0;}</style><h1 class="css-1q2z4uj ecgn8ig1">Publishing to GitHub Packages with Gradle and GitHub Actions</h1><style data-emotion-css="wvcn4j">.css-wvcn4j{margin-top:10px;color:#606060;}</style><h3 class="css-wvcn4j ecgn8ig2">04 December, 2019<!-- --> - <!-- -->5 min read</h3><style data-emotion-css="lwdzql">.css-lwdzql{margin-bottom:1.45rem;}</style><div class="css-lwdzql ecgn8ig3"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden"><div aria-hidden="true" style="width:100%;padding-bottom:56%"></div><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABtklEQVQoz1WS20rDQBCG82iCpycQFF9BLAiiF94peqV4L+gb+CQVRPB0IZYmRRNL0ybNcXfzOzObTduFYXOY/eaf+dfTBtCmgdINaoV253d0u6wG8r+qbV5ZGXrW9F/DGIOm4e8GHgMczAEdjPJk/5kYhLFBUTWg8xT8zwLyUtF3TQU0PWsLdEoW4IXa68cEO1djbJ9FOL0fkypjBZMicJD0mpKzkgrWgLeszO0VATk3ihX2Lkc4uRti92KAzeMvDH8LARqBUT4pyUgZwwoax0rLTi3Pidc0rbF+9I798zf0bt+wdvCMj0FCLWtpk2fIsFxgNrxlmG3bmtS0Cs4fvrFx+IStXh+9m3dSb3N5Xq5NFznN2LPzWnJVmQ42jWOE4S9eP330X77hj36QpjNxVWwXZ0khOc4wLuDJtdFOoXWuJBm8BwQY+gGCIMBfFML3fYRRJAXZ5UmaI8nKDiYKZ1mNeaEkgRNdMgO5GI0JJbdpWlPbxc5GcUrAugOKwnCSIE7m0oK9CfYUt5WXNpmDi/JhUcJGUJWs0BbWAucF30Olupu+ClOS7AYublamHT66Qk4Zwzj+AfWaS/psygcnAAAAAElFTkSuQmCC" alt="Featured image" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/5153121965dab5532eeb399f452f2e5e/69585/github-actions.png 200w,
+/static/5153121965dab5532eeb399f452f2e5e/497c6/github-actions.png 400w,
+/static/5153121965dab5532eeb399f452f2e5e/73c85/github-actions.png 700w" sizes="(max-width: 700px) 100vw, 700px" /><img loading="lazy" sizes="(max-width: 700px) 100vw, 700px" srcset="/static/5153121965dab5532eeb399f452f2e5e/69585/github-actions.png 200w,
+/static/5153121965dab5532eeb399f452f2e5e/497c6/github-actions.png 400w,
+/static/5153121965dab5532eeb399f452f2e5e/73c85/github-actions.png 700w" src="/static/5153121965dab5532eeb399f452f2e5e/73c85/github-actions.png" alt="Featured image" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></div><style data-emotion-css="1nvbe4k">.css-1nvbe4k a{-webkit-text-decoration:none;text-decoration:none;position:relative;background-image:linear-gradient( rgba(0,45,90,0.8),rgba(0,45,90,0.8) );background-repeat:no-repeat;background-size:100% 0.2em;background-position:0 88%;-webkit-transition:background-size 0.25s ease-in;transition:background-size 0.25s ease-in;}.css-1nvbe4k a:hover{background-size:100% 88%;}.css-1nvbe4k a > code:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-1nvbe4k .gatsby-highlight{margin-bottom:1.45rem;}</style><div class="css-1nvbe4k ecgn8ig4"><p>In November 2019 GitHub released <a href="https://github.com/features/packages">GitHub Packages</a> and <a href="https://github.com/features/actions">GitHub Actions</a> to the general public. Packages allows library owners to publish their code directly to GitHub. The aim is to be another package hosting repository like <a href="https://www.npmjs.com/">npmjs.com</a> or <a href="https://mvnrepository.com/repos/central">Maven Central</a>, but now the packages and code can live side-by-side. GitHub Packages supports multiple package types, including Docker, RubyGems, NPM, Maven, and NuGet to name a few.</p>
+<p>GitHub Actions allows repository owners to automate their workflow with different steps that can be triggered on any repository event. This can include common things like pull request checks and publishing releases, but can it can also run on other events like <a href="https://github.com/actions/first-interaction">messaging first time contributors</a>.</p>
+<p>Together both of these features are free for open source projects and they work well together to have all of the tasks around library management in a single location. As I was creating a new open source library in <a href="https://kotlinlang.org/">Kotlin</a> and <a href="https://gradle.org/">Gradle</a>, I thought I would try to use both Actions and Packages and document my experience along the way.</p>
+<p>If you just want a quick example, you can view all the code and GitHub files in my library, <a href="https://github.com/smyrick/kotlin-extensions">kotlin-extensions</a>.</p>
+<h2>Getting Setup</h2>
+<p>The first step is to make sure our library can build locally and the output is a valid jar file. While we can use Gradle in GitHub Actions with some community created steps, I like to use the <a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Gradle Wrapper</a>. This ensures that all contributors to a project are using the same version of Gradle and we can just use the wrapper in the actions. This will also help us avoid the common <em>"it works on my machine"</em> problem.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ ./gradlew build</code></pre></div>
+<h2>Setting up Gradle publish</h2>
+<p>Now that we have a successful build, we want to configure Gradle so when we run the publish command it connects to GitHub Packages. I am using the <a href="https://docs.gradle.org/current/userguide/kotlin_dsl.html">Gradle Kotlin DSL</a> but for more details see the <a href="https://docs.github.com/en/free-pro-team/packages/guides/configuring-gradle-for-use-with-github-packages">official GitHub Packages documentation</a> on setting up Gradle.</p>
+<p>First we need to include the <code class="language-text">maven-publish</code> plugin as a dependency in <code class="language-text">build.gradle.kts</code>.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token comment">// build.gradle.kts</span>
+plugins <span class="token punctuation">{</span>
+    `maven<span class="token operator">-</span>publish`
+    <span class="token comment">// Other library plugins...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Next we need to configure the publishing task by replacing <code class="language-text">my-username</code> and <code class="language-text">my-library</code> with the proper values. <code class="language-text">GITHUB_ACTOR</code> and <code class="language-text">GITHUB_TOKEN</code> are going to come from GitHub Actions so don't worry about those for now.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token comment">// build.gradle.kts continued...</span>
+publishing <span class="token punctuation">{</span>
+    publications <span class="token punctuation">{</span>
+        create<span class="token operator">&lt;</span>MavenPublication<span class="token operator">></span><span class="token punctuation">(</span><span class="token string">"default"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">from</span><span class="token punctuation">(</span>components<span class="token punctuation">[</span><span class="token string">"java"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token comment">// Include any other artifacts here, like javadocs</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    repositories <span class="token punctuation">{</span>
+        maven <span class="token punctuation">{</span>
+            name <span class="token operator">=</span> <span class="token string">"GitHubPackages"</span>
+            url <span class="token operator">=</span> <span class="token function">uri</span><span class="token punctuation">(</span><span class="token string">"https://maven.pkg.github.com/{my-username}/{my-library}"</span><span class="token punctuation">)</span>
+            credentials <span class="token punctuation">{</span>
+                username <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">getenv</span><span class="token punctuation">(</span><span class="token string">"GITHUB_ACTOR"</span><span class="token punctuation">)</span>
+                password <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">getenv</span><span class="token punctuation">(</span><span class="token string">"GITHUB_TOKEN"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The last step we need to include is to set the library <code class="language-text">group</code> and <code class="language-text">version</code> in <code class="language-text">gradle.properties</code>. This will allow us to change the version dynamically when we publish without having to update our main build file every release.</p>
+<div class="gatsby-highlight" data-language="properties"><pre class="language-properties"><code class="language-properties"><span class="token comment"># gradle.properties</span>
+<span class="token attr-name">group</span><span class="token punctuation">=</span><span class="token attr-value">dev.smyrick</span>
+<span class="token attr-name">version</span><span class="token punctuation">=</span><span class="token attr-value">0.0.1-SNAPSHOT</span></code></pre></div>
+<h2>Creating GitHub Actions</h2>
+<p>Now that we have Gradle configured the next step is to execute the publish task in GitHub Actions. Create a new workflow file in <code class="language-text">.github/workflows</code>. A current version of the workflow can be found in the <a href="https://github.com/smyrick/kotlin-extensions/blob/master/.github/workflows/publish-release.yml">kotlin-extensions repo</a>.</p>
+<p>This workflow is publishing a new package when there is a new release in GitHub. This means that there will be tag created with the release version when this workflow is triggered.</p>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token comment"># publish-release.yml</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> Publish release
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">release</span><span class="token punctuation">:</span>
+    <span class="token key atrule">types</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>published<span class="token punctuation">]</span></code></pre></div>
+<p>Next we need to setup the steps to run on this trigger. We will checkout the code at the tagged version; set up our JVM with a specified version; and finally run the following command, passing in the new version.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">./gradlew -Pversion<span class="token operator">=</span><span class="token variable">${version}</span> publish</code></pre></div>
+<p>The version name comes from the git tag value. Since git tags are published with the full name format of <code class="language-text">refs/tags/xxxx</code> we can run a simple cut to extract the tag name and use that as our version. The <code class="language-text">GITHUB_ACTOR</code> is set for all GitHub Actions as an environment variable. The <code class="language-text">GITHUB_TOKEN</code> is set for all actions but it is in the secrets, so we must copy it to an environment variable that we are using in our Gradle configuration. GitHub is smart enough though to not expose this value in the logs even if environment value is logged. See the the Actions documentation for a list of <a href="https://docs.github.com/en/free-pro-team/actions/reference/environment-variables">all environment variables</a>.</p>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token comment"># publish-release.yml continued...</span>
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">publish-release</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout latest code
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v1
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Set up JDK 11
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>java@v1
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">java-version</span><span class="token punctuation">:</span> <span class="token number">11</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Publish artifact
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+          <span class="token key atrule">GITHUB_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GITHUB_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+        <span class="token comment"># The GITHUB_REF tag comes in the format 'refs/tags/xxx'.</span>
+        <span class="token comment"># If we split on '/' and take the 3rd value,</span>
+        <span class="token comment"># we can get the release name.</span>
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3)
+          echo "New version: ${NEW_VERSION}"
+          echo "Github username: ${GITHUB_ACTOR}"
+          ./gradlew -Pversion=${NEW_VERSION} publish</span></code></pre></div>
+<h2>Monitoring Packages</h2>
+<p>After we have Gradle setup and the GitHub Actions checked in, we can release a new version of our library. The release notes from the tag will be copied over as the package description which can be helpful to mention any changes that occured for the new version.</p>
+<p>As an example, <a href="https://github.com/smyrick/kotlin-extensions/releases/tag/0.0.19">this tag release</a> resulted in <a href="https://github.com/smyrick/kotlin-extensions/packages/55467?version=0.0.19">this package</a> being published. From the packages view we can also track the number of downloads and other packages using the specific version. This can be helpful for the new features coming to GitHub <a href="https://help.github.com/en/github/managing-security-vulnerabilities/managing-security-vulnerabilities-in-your-project">around security</a>, which will allow us to alert all dependents of any vulnerabilities in a specific version and ask them to update.</p>
+<hr>
+<p>That wraps up this short post. I hope you will find the information helpful so you don’t have to spend an afternoon reading through the GitHub documentation as I did (which is still very good).</p>
+<p>Feel free to share your own experience with GitHub Actions and Packages with me on <a href="https://twitter.com/shanemyrick">Twitter</a> and follow me for future articles! 😃</p>
+<hr>
+<p><em>This was <a href="https://medium.com/@shanemyrick/publishing-to-github-packages-with-gradle-and-github-actions-4ad842634c4e">orginally posted to Medium</a> and moved to my personal blog at a later date.</em></p></div></div></main><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><footer class="css-1l4w6pd ezkpj562"><p>© <!-- -->2020<!-- --> <!-- -->Shane Myrick<!-- -->, Built with<!-- --> </p><style data-emotion-css="o5uqvq">.css-o5uqvq{margin-left:5px;}</style><a href="https://www.gatsbyjs.org" class="css-o5uqvq ezkpj561">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/publishing-github-packages-gradle-github-actions";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-3f99b51aa82fcaeb5543.js"],"app":["/app-1b9f2b13f5d7b331b8bd.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"],"component---src-pages-404-jsx":["/component---src-pages-404-jsx-344c7c73085637dd52c4.js"],"component---src-pages-blog-jsx":["/component---src-pages-blog-jsx-369294a110de5e40111d.js"],"component---src-pages-index-jsx":["/component---src-pages-index-jsx-a32b097296fb6c480dd2.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-d7ef6a1190d73708b6d7.js"]};/*]]>*/</script><script src="/polyfill-3f99b51aa82fcaeb5543.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-d7ef6a1190d73708b6d7.js" async=""></script><script src="/ba67a7eff56464363ff47824b45e68473bccefc5-8a8efa7b833c6f062d60.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-1b9f2b13f5d7b331b8bd.js" async=""></script><script src="/framework-305b3707783ccc9d7ca6.js" async=""></script><script src="/webpack-runtime-0e946721d88aeb66471f.js" async=""></script></body></html>
