@@ -4,9 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
-
-require("prism-themes/themes/prism-atom-dark.css");
+/*
+ * Set the PrismJS code highlighting themes
+ * See: https://prismjs.com/
+ */
+require("prism-themes/themes/prism-vsc-dark-plus.css");
 require("prismjs/plugins/line-numbers/prism-line-numbers.css");
 
 exports.onInitialClientRender = () => {
