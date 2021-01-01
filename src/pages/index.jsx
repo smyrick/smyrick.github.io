@@ -4,10 +4,10 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`personal site`, `blog`, `Shane Myrick`]} />
-    <LandingBio />
-  </Layout>
+    <Layout>
+        <SEO title="Home" />
+        <LandingBio />
+    </Layout>
 );
 
 export default IndexPage;

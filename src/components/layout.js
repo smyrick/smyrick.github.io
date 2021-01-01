@@ -14,55 +14,57 @@ import Header from './header';
 import './layout.css';
 
 const Content = styled.div`
-  margin: 0 auto;
-  max-width: 860px;
-  padding: 0 1.0875rem 1rem;
-  padding-top: 0;
+    margin: 0 auto;
+    max-width: 860px;
+    padding: 0 1.0875rem 1rem;
+    padding-top: 0;
 `;
 
 const GatsbyLink = styled.a`
-  margin-left: 5px;
+    margin-left: 5px;
 `;
 
 const Footer = styled.footer`
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 `;
 
 const SiteTitleQuery = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
+    query SiteTitleQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
     }
-  }
 `;
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={SiteTitleQuery}
-    render={(data) => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Content>
-          <main>{children}</main>
-          <Footer>
-            <p>
-              © {new Date().getFullYear()} {data.site.siteMetadata.title}, Built
-              with
-              {` `}
-            </p>
-            <GatsbyLink href="https://www.gatsbyjs.org">Gatsby</GatsbyLink>
-          </Footer>
-        </Content>
-      </>
-    )}
-  />
+    <StaticQuery
+        query={SiteTitleQuery}
+        render={(data) => (
+            <>
+                <Header siteTitle={data.site.siteMetadata.title} />
+                <Content>
+                    <main>{children}</main>
+                    <Footer>
+                        <p>
+                            © {new Date().getFullYear()}{' '}
+                            {data.site.siteMetadata.title}, Built with
+                            {` `}
+                        </p>
+                        <GatsbyLink href="https://www.gatsbyjs.org">
+                            Gatsby
+                        </GatsbyLink>
+                    </Footer>
+                </Content>
+            </>
+        )}
+    />
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export default Layout;

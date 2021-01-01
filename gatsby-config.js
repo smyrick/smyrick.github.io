@@ -3,7 +3,9 @@ module.exports = {
     title: `Shane Myrick`,
     subtitle: `Software Developer and Fitness Coach`,
     description: `Shane Myrick's personal site and blogs`,
-    author: `@shanemyrick`,
+    twitterUsername: `@shanemyrick`,
+    siteUrl: "https://shanemyrick.com",
+    image: 'images/shane-profile.jpeg',
     socialMedia: [
       {
         name: 'GitHub',
