@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
 /**
@@ -10,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 function SEO({ title, description, article }) {
+    const { pathname } = useLocation();
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -31,7 +33,7 @@ function SEO({ title, description, article }) {
         titleTemplate: `%s | ${site.siteMetadata.title}`,
         description: description || site.siteMetadata.description,
         image: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`,
-        url: `${site.siteMetadata.siteUrl}`,
+        url: `${site.siteMetadata.siteUrl}${pathname}`,
         twitterUsername: site.siteMetadata.twitterUsername,
     };
 
