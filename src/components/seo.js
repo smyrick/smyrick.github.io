@@ -1,98 +1,77 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
+
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
+function SEO({ title, description, article }) {
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        description
+                        twitterUsername
+                        image
+                        siteUrl
+                    }
+                }
+            }
+        `
+    );
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+    const seo = {
+        title: title || site.siteMetadata.title,
+        titleTemplate: `%s | ${site.siteMetadata.title}`,
+        description: description || site.siteMetadata.description,
+        image: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`,
+        url: `${site.siteMetadata.siteUrl}`,
+        twitterUsername: site.siteMetadata.twitterUsername,
+    };
 
-function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  );
+    return (
+        <Helmet title={seo.title} titleTemplate={seo.titleTemplate}>
+            <meta name="description" content={seo.description} />
+            <meta name="image" content={seo.image} />
 
-  const metaDescription = description || site.siteMetadata.description;
+            {seo.url && <meta property="og:url" content={seo.url} />}
+            {(article ? true : null) && (
+                <meta property="og:type" content="article" />
+            )}
+            {seo.title && <meta property="og:title" content={seo.title} />}
+            {seo.description && (
+                <meta property="og:description" content={seo.description} />
+            )}
+            {seo.image && <meta property="og:image" content={seo.image} />}
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
-    />
-  );
+            <meta name="twitter:card" content="summary_large_image" />
+            {seo.twitterUsername && (
+                <meta name="twitter:creator" content={seo.twitterUsername} />
+            )}
+            {seo.title && <meta name="twitter:title" content={seo.title} />}
+            {seo.description && (
+                <meta name="twitter:description" content={seo.description} />
+            )}
+            {seo.image && <meta name="twitter:image" content={seo.image} />}
+        </Helmet>
+    );
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
+    description: null,
+    article: false,
 };
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    article: PropTypes.bool,
 };
 
 export default SEO;
