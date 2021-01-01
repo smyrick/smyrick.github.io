@@ -5,7 +5,7 @@ module.exports = {
     description: `Shane Myrick's personal site and blogs`,
     twitterUsername: `@shanemyrick`,
     siteUrl: "https://shanemyrick.com",
-    image: 'images/shane-profile.jpeg',
+    image: '/shane-profile.jpeg',
     socialMedia: [
       {
         name: 'GitHub',
