@@ -38,7 +38,7 @@ function SEO({ title, description, article }) {
     };
 
     return (
-        <Helmet htmlAttributes={{lang='en'}} title={seo.title} titleTemplate={seo.titleTemplate}>
+        <Helmet htmlAttributes={{lang: 'en'}} title={seo.title} titleTemplate={seo.titleTemplate}>
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
 
