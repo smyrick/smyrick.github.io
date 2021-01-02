@@ -34,6 +34,7 @@
     "gatsby-plugin-offline": "^3.2.16",
     "gatsby-plugin-react-helmet": "^3.3.9",
     "gatsby-plugin-sharp": "^2.11.2",
+    "gatsby-plugin-sitemap": "^2.9.0",
     "gatsby-remark-prismjs": "^3.5.9",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-filesystem": "^2.3.18",
