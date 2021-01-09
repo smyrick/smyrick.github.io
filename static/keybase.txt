@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/shanemyrick
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://shanemyrick.com
+  * I am shanemyrick (https://keybase.io/shanemyrick) on keybase.
+  * I have a public key ASAjG6Jfs6gvNGfRh3o95aV6wafO4DaS8beNfFFqGPj-1go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120ca0a69e4b63c13468a835b1cfe302e9c65c1cb538a6053b3f67f52e60a71fdaf0a",
+      "host": "keybase.io",
+      "kid": "0120231ba25fb3a82f3467d1877a3de5a57ac1a7cee03692f1b78d7c516a18f8fed60a",
+      "uid": "f66aafc30c0879786f12313b4897f619",
+      "username": "shanemyrick"
+    },
+    "merkle_root": {
+      "ctime": 1610165887,
+      "hash": "db8076721f4cbcea61633e7c3cbc9dc464846d25337a8e4ab2f83e1a97072f608b69365ec0be094ebb454fa20098f9faebf367a51ca1bbc4b69c92d1cc0062fc",
+      "hash_meta": "abec1429b90aac5752c1dd44ecb591ca2b89e3a3d8051c81676d77971bf0109f",
+      "seqno": 18653270
+    },
+    "service": {
+      "entropy": "7bBj+6WLZS4How8Mm+kGdQLw",
+      "hostname": "shanemyrick.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1610165937,
+  "expire_in": 504576000,
+  "prev": "83d4b5064ff38c89b2460ed0d41ca190e0d8e6958924787fa50c26239be371cd",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIxuiX7OoLzRn0Yd6PeWlesGnzuA2kvG3jXxRahj4/tYKp3BheWxvYWTESpcCCMQgg9S1Bk/zjImyRg7Q1ByhkODY5pWJJHh/pQwmI5vjcc3EINnfaTmQ8pEjCHKEIXWL6zFgJIBSfNR44GkrACSgM4XHAgHCo3NpZ8RASMeynWiajp3mjFB+GNL4IjyZ4qdZC6pNOBbKcKBnqeBTWGlgZqy8d/jtgirrsIsjpSHX9is97cPYCwpy6qdKDqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJfZjcTacq69zWSSj8mdfFAYs2eM4RUEIpufPTvK89RRo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/shanemyrick
+
+==================================================================
