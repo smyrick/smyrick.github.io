@@ -46,11 +46,11 @@ const SiteHeader = styled.header`
     justify-content: center;
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
     <SiteHeader>
         <Content>
             <p>
-                <HomeLink to="/">{siteTitle}</HomeLink>
+                <HomeLink to="/">Home</HomeLink>
                 <NavLink to="/blog">Blog</NavLink>
             </p>
         </Content>
