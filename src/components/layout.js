@@ -44,7 +44,10 @@ const Layout = ({ children }) => (
                 <Content>
                     <main>{children}</main>
                     <Footer>
-                        <p>© {new Date().getFullYear()}{' '}{data.site.siteMetadata.title}</p>
+                        <p>
+                            © {new Date().getFullYear()}{' '}
+                            {data.site.siteMetadata.title}
+                        </p>
                     </Footer>
                 </Content>
             </>

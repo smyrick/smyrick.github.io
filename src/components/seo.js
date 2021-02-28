@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from 'gatsby';
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-function SEO({ title, description, article }) {
+function SEO({ title, description, article, image }) {
     const { pathname } = useLocation();
     const { site } = useStaticQuery(
         graphql`
@@ -32,13 +32,18 @@ function SEO({ title, description, article }) {
         title: title || site.siteMetadata.title,
         titleTemplate: `%s | ${site.siteMetadata.title}`,
         description: description || site.siteMetadata.description,
-        image: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`,
+        image:
+            image || `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`,
         url: `${site.siteMetadata.siteUrl}${pathname}`,
         twitterUsername: site.siteMetadata.twitterUsername,
     };
 
     return (
-        <Helmet htmlAttributes={{lang: 'en'}} title={seo.title} titleTemplate={seo.titleTemplate}>
+        <Helmet
+            htmlAttributes={{ lang: 'en' }}
+            title={seo.title}
+            titleTemplate={seo.titleTemplate}
+        >
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
 

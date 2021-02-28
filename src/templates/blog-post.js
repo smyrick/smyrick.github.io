@@ -55,20 +55,21 @@ const MarkdownContent = styled.div`
 
 export default ({ data }) => {
     const post = data.markdownRemark;
-    const featuredImgFluid =
-        post.frontmatter.featuredImage.childImageSharp.fluid;
+    const postData = post.frontmatter;
+    const featuredImgFluid = postData.featuredImage.childImageSharp.fluid;
 
     return (
         <Layout>
             <SEO
-                title={post.frontmatter.title}
-                description={post.frontmatter.description || post.excerpt}
+                title={postData.title}
+                description={postData.description || post.excerpt}
                 article={true}
+                image={featuredImgFluid.src}
             />
             <Content>
-                <MarkedHeader>{post.frontmatter.title}</MarkedHeader>
+                <MarkedHeader>{postData.title}</MarkedHeader>
                 <HeaderDate>
-                    {post.frontmatter.date} - {post.fields.readingTime.text}
+                    {postData.date} - {post.fields.readingTime.text}
                 </HeaderDate>
                 <FeaturedImage>
                     <Img fluid={featuredImgFluid} alt="Featured image" />
