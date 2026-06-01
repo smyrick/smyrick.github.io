@@ -10,12 +10,11 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
 
 <BaseLayout title="Home" description={site.description} path="/">
     <section
-        class="landing-hero mx-auto grid min-h-[calc(100svh-10rem)] w-full max-w-5xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]"
+        class="landing-hero mx-auto grid min-h-[calc(100svh-10rem)] w-full max-w-5xl items-center gap-8 px-5 py-8 sm:gap-12 sm:px-8 sm:py-12 lg:grid-cols-[0.9fr_1.1fr]"
     >
         <div class="portrait-stage" data-portrait-stage>
             <div class="portrait-plate" aria-hidden="true"></div>
             <div class="portrait-ring" aria-hidden="true"></div>
-            <span class="identity-chip identity-chip-code">Seattle / code</span>
             <img
                 class="portrait-image"
                 src="/shane-profile.jpeg"
@@ -23,7 +22,6 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
                 width="460"
                 height="460"
             />
-            <span class="identity-chip identity-chip-coaching">coaching</span>
         </div>
 
         <div class="relative z-10">
@@ -130,22 +128,6 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
                     '--portrait-ring-y',
                     `${y * -7}px`
                 );
-                portraitStage.style.setProperty(
-                    '--portrait-chip-code-x',
-                    `${x * -5}px`
-                );
-                portraitStage.style.setProperty(
-                    '--portrait-chip-code-y',
-                    `${y * -5}px`
-                );
-                portraitStage.style.setProperty(
-                    '--portrait-chip-coaching-x',
-                    `${x * 6}px`
-                );
-                portraitStage.style.setProperty(
-                    '--portrait-chip-coaching-y',
-                    `${y * 6}px`
-                );
             });
 
             portraitStage.addEventListener('pointerleave', () => {
@@ -155,14 +137,6 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
                 portraitStage.style.removeProperty('--portrait-shift-y');
                 portraitStage.style.removeProperty('--portrait-ring-x');
                 portraitStage.style.removeProperty('--portrait-ring-y');
-                portraitStage.style.removeProperty('--portrait-chip-code-x');
-                portraitStage.style.removeProperty('--portrait-chip-code-y');
-                portraitStage.style.removeProperty(
-                    '--portrait-chip-coaching-x'
-                );
-                portraitStage.style.removeProperty(
-                    '--portrait-chip-coaching-y'
-                );
             });
         }
     </script>
@@ -200,10 +174,6 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
             --portrait-shift-y: 0px;
             --portrait-ring-x: 0px;
             --portrait-ring-y: 0px;
-            --portrait-chip-code-x: 0px;
-            --portrait-chip-code-y: 0px;
-            --portrait-chip-coaching-x: 0px;
-            --portrait-chip-coaching-y: 0px;
             position: relative;
             min-height: min(88vw, 27rem);
             transform-style: preserve-3d;
@@ -212,8 +182,7 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
 
         .portrait-image,
         .portrait-plate,
-        .portrait-ring,
-        .identity-chip {
+        .portrait-ring {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -262,39 +231,6 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
             transition: transform 180ms ease-out;
         }
 
-        .identity-chip {
-            z-index: 3;
-            border: 1px solid var(--color-line);
-            border-radius: 999px;
-            background: rgba(255, 250, 243, 0.9);
-            box-shadow: 0 0.9rem 2rem rgba(32, 25, 23, 0.08);
-            color: var(--color-accent-strong);
-            font-size: 0.8rem;
-            font-weight: 750;
-            line-height: 1;
-            padding: 0.7rem 0.85rem;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            transform-style: flat;
-        }
-
-        .identity-chip-code {
-            transform: translate3d(
-                calc(-190% + var(--portrait-chip-code-x)),
-                calc(-340% + var(--portrait-chip-code-y)),
-                4rem
-            );
-        }
-
-        .identity-chip-coaching {
-            color: #b45b42;
-            transform: translate3d(
-                calc(85% + var(--portrait-chip-coaching-x)),
-                calc(300% + var(--portrait-chip-coaching-y)),
-                4rem
-            );
-        }
-
         @media (max-width: 1023px) {
             .landing-hero::before {
                 inset: 0.75rem 0;
@@ -305,60 +241,33 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
             }
         }
 
-        @media (max-width: 767px) {
-            .identity-chip-code {
-                transform: translate3d(
-                    calc(-125% + var(--portrait-chip-code-x)),
-                    calc(-335% + var(--portrait-chip-code-y)),
-                    4rem
-                );
-            }
-        }
-
         @media (max-width: 520px) {
             .landing-hero::before {
                 border-radius: 1.5rem;
             }
 
             .portrait-stage {
-                min-height: 20rem;
+                min-height: 17.5rem;
             }
 
             .portrait-image {
-                width: min(78vw, 19rem);
+                width: min(72vw, 17rem);
                 border-radius: 1.5rem;
             }
 
             .portrait-plate {
-                width: min(76vw, 18rem);
+                width: min(70vw, 16.5rem);
                 border-radius: 1.65rem;
             }
 
             .portrait-ring {
-                width: min(75vw, 18.5rem);
-            }
-
-            .identity-chip-code {
-                transform: translate3d(
-                    calc(-118% + var(--portrait-chip-code-x)),
-                    calc(-315% + var(--portrait-chip-code-y)),
-                    4rem
-                );
-            }
-
-            .identity-chip-coaching {
-                transform: translate3d(
-                    calc(45% + var(--portrait-chip-coaching-x)),
-                    calc(270% + var(--portrait-chip-coaching-y)),
-                    4rem
-                );
+                width: min(73vw, 17.2rem);
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
             .portrait-image,
-            .portrait-ring,
-            .identity-chip {
+            .portrait-ring {
                 transition: none;
             }
         }
