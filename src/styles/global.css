@@ -16,7 +16,9 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
   margin: 0;
   background:
     radial-gradient(circle at top left, rgba(47, 111, 101, 0.12), transparent 30rem),
@@ -27,6 +29,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
 }
 
 a {

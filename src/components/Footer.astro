@@ -7,11 +7,25 @@ import { site } from '../site';
     <p>&copy; {new Date().getFullYear()} {site.name}</p>
     <div class="flex gap-4">
       {
-        site.social.map((item) => (
-          <a class="transition hover:text-[var(--color-accent-strong)]" href={item.href}>
-            {item.label}
-          </a>
-        ))
+        site.social.map((item) =>
+          'copy' in item ? (
+            <button
+              type="button"
+              class="transition hover:text-[var(--color-accent-strong)]"
+              data-copy-email={item.copy}
+              aria-label={`Copy ${item.copy}`}
+            >
+              {item.label}
+            </button>
+          ) : (
+            <a
+              class="transition hover:text-[var(--color-accent-strong)]"
+              href={item.href}
+            >
+              {item.label}
+            </a>
+          )
+        )
       }
     </div>
   </div>

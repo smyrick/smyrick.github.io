@@ -1,16 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getPublishedPosts } from '../lib/posts';
+import SocialIcon from '../components/SocialIcon.astro';
 import { site } from '../site';
 
-const posts = await getPublishedPosts();
-const latestPost = posts[0];
-const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
+const homeLinks = [...site.social];
+const pillClass =
+    'inline-flex items-center gap-[clamp(0.3rem,1vw,0.5rem)] rounded-full border border-[var(--color-line)] bg-white/55 px-[clamp(0.6rem,2vw,1rem)] py-[clamp(0.35rem,1.2vw,0.625rem)] text-[clamp(0.7rem,1.7vw,0.875rem)] font-semibold text-[var(--color-ink)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2';
+
+const pillIcon = {
+    GitHub: 'github',
+    LinkedIn: 'linkedin',
+    Email: 'mail',
+} as const;
 ---
 
 <BaseLayout title="Home" description={site.description} path="/">
     <section
-        class="landing-hero mx-auto grid min-h-[calc(100svh-10rem)] w-full max-w-5xl items-center gap-8 px-5 py-8 sm:gap-12 sm:px-8 sm:py-12 lg:grid-cols-[0.9fr_1.1fr]"
+        class="landing-hero mx-auto grid min-h-0 w-full max-w-5xl flex-1 grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-[clamp(0.75rem,3vw,3rem)] px-5 py-8 sm:px-8 sm:py-12"
     >
         <div class="portrait-stage" data-portrait-stage>
             <div class="portrait-plate" aria-hidden="true"></div>
@@ -24,69 +30,58 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
             />
         </div>
 
-        <div class="relative z-10">
+        <div>
             <p
-                class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]"
+                class="mb-[clamp(0.5rem,1.5vw,1rem)] text-[clamp(0.625rem,1.6vw,0.875rem)] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]"
             >
                 {site.location}
             </p>
             <h1
-                class="max-w-3xl text-5xl font-semibold leading-none text-[var(--color-ink)] sm:text-6xl lg:text-7xl"
+                class="max-w-3xl text-[clamp(1.4rem,5.2vw,4.5rem)] font-semibold leading-none text-[var(--color-ink)]"
             >
                 {site.name}
             </h1>
             <p
-                class="mt-6 max-w-2xl text-xl leading-8 text-[var(--color-muted)]"
+                class="mt-[clamp(0.75rem,2vw,1.5rem)] max-w-2xl text-[clamp(0.9rem,2.2vw,1.25rem)] leading-relaxed text-[var(--color-muted)]"
             >
                 {site.role} This is the quiet home base for contact, writing, and
                 whatever is worth keeping outside the feed.
             </p>
-            <div class="mt-8 flex flex-wrap gap-3">
+            <div
+                class="mt-[clamp(1rem,3vw,2rem)] flex flex-wrap gap-[clamp(0.4rem,1.5vw,0.75rem)]"
+            >
                 {
-                    homeLinks.map((item) => (
-                        <a
-                            class="rounded-full border border-[var(--color-line)] bg-white/55 px-4 py-2 text-sm font-semibold text-[var(--color-ink)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent-strong)]"
-                            href={item.href}
-                        >
-                            {item.label}
-                        </a>
-                    ))
-                }
-            </div>
-        </div>
-    </section>
+                    homeLinks.map((item) => {
+                        const icon = pillIcon[item.label as keyof typeof pillIcon];
 
-    <section class="mx-auto w-full max-w-5xl px-5 pb-16 sm:px-8">
-        <div
-            class="grid gap-6 border-t border-[var(--color-line)] pt-8 md:grid-cols-[0.7fr_1.3fr]"
-        >
-            <div>
-                <h2
-                    class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]"
-                >
-                    Writing
-                </h2>
-            </div>
-            <div>
-                {
-                    latestPost ? (
-                        <a class="group block" href={latestPost.data.path}>
-                            <p class="text-sm text-[var(--color-muted)]">
-                                Latest post
-                            </p>
-                            <h3 class="mt-2 text-2xl font-semibold leading-tight text-[var(--color-ink)] transition group-hover:text-[var(--color-accent-strong)]">
-                                {latestPost.data.title}
-                            </h3>
-                            <p class="mt-3 max-w-2xl text-[var(--color-muted)]">
-                                Old notes stay public here. New writing shows up
-                                when it is useful enough to keep.
-                            </p>
-                        </a>
-                    ) : (
-                        <p class="text-[var(--color-muted)]">
-                            Writing archive coming back soon.
-                        </p>
-                    )
+                        return 'copy' in item ? (
+                            <span
+                                class="email-copy-wrap relative inline-flex"
+                                data-copy-wrap
+                            >
+                                <button
+                                    type="button"
+                                    class={pillClass}
+                                    data-copy-email={item.copy}
+                                    aria-label={`Copy ${item.copy}`}
+                                >
+                                    {icon && <SocialIcon name={icon} />}
+                                    {item.label}
+                                </button>
+                                <span
+                                    class="email-copy-toast"
+                                    data-copy-toast
+                                    role="status"
+                                    aria-live="polite"
+                                />
+                            </span>
+                        ) : (
+                            <a class={pillClass} href={item.href}>
+                                {icon && <SocialIcon name={icon} />}
+                                {item.label}
+                            </a>
+                        );
+                    })
                 }
             </div>
         </div>
@@ -142,29 +137,25 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
     </script>
 
     <style>
-        .landing-hero {
-            position: relative;
-            isolation: isolate;
+        .email-copy-toast {
+            position: absolute;
+            top: calc(100% + 0.35rem);
+            left: 0;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-accent-strong);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(-0.25rem);
+            pointer-events: none;
+            transition:
+                opacity 180ms ease,
+                transform 180ms ease;
         }
 
-        .landing-hero::before {
-            position: absolute;
-            inset: 1.5rem 0;
-            z-index: -1;
-            border: 1px solid rgba(226, 209, 191, 0.72);
-            border-radius: 2rem;
-            background:
-                radial-gradient(
-                    circle at 12% 25%,
-                    rgba(47, 111, 101, 0.14),
-                    transparent 24rem
-                ),
-                linear-gradient(
-                    135deg,
-                    rgba(255, 255, 255, 0.34),
-                    rgba(245, 234, 220, 0.74)
-                );
-            content: '';
+        .email-copy-wrap.is-copied .email-copy-toast {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .portrait-stage {
@@ -175,7 +166,10 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
             --portrait-ring-x: 0px;
             --portrait-ring-y: 0px;
             position: relative;
-            min-height: min(88vw, 27rem);
+            width: 100%;
+            max-width: 24rem;
+            margin-inline: auto;
+            aspect-ratio: 1;
             transform-style: preserve-3d;
             perspective: 56rem;
         }
@@ -190,11 +184,11 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
 
         .portrait-image {
             z-index: 2;
-            width: min(78vw, 24rem);
+            width: 88%;
             aspect-ratio: 1;
             height: auto;
             border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 2rem;
+            border-radius: clamp(0.85rem, 6%, 2rem);
             box-shadow: 0 2rem 5rem rgba(156, 123, 92, 0.24);
             object-fit: cover;
             transform: translate(-50%, -50%)
@@ -210,16 +204,16 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
 
         .portrait-plate {
             z-index: 0;
-            width: min(76vw, 23rem);
+            width: 84%;
             aspect-ratio: 1;
-            border-radius: 2.2rem;
+            border-radius: clamp(0.95rem, 7%, 2.2rem);
             background: rgba(47, 111, 101, 0.14);
             transform: translate(-55%, -43%) rotate(-7deg);
         }
 
         .portrait-ring {
             z-index: 1;
-            width: min(72vw, 22rem);
+            width: 80%;
             aspect-ratio: 1;
             border: 1px solid rgba(23, 76, 70, 0.32);
             border-radius: 999px;
@@ -231,37 +225,27 @@ const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
             transition: transform 180ms ease-out;
         }
 
-        @media (max-width: 1023px) {
-            .landing-hero::before {
-                inset: 0.75rem 0;
+        @media (max-width: 640px) {
+            .landing-hero {
+                grid-template-columns:
+                    minmax(0, 0.62fr)
+                    minmax(0, 1.38fr);
             }
 
             .portrait-stage {
-                order: -1;
+                max-width: 9rem;
             }
         }
 
-        @media (max-width: 520px) {
-            .landing-hero::before {
-                border-radius: 1.5rem;
+        @media (max-width: 400px) {
+            .landing-hero {
+                grid-template-columns:
+                    minmax(0, 0.5fr)
+                    minmax(0, 1.5fr);
             }
 
             .portrait-stage {
-                min-height: 17.5rem;
-            }
-
-            .portrait-image {
-                width: min(72vw, 17rem);
-                border-radius: 1.5rem;
-            }
-
-            .portrait-plate {
-                width: min(70vw, 16.5rem);
-                border-radius: 1.65rem;
-            }
-
-            .portrait-ring {
-                width: min(73vw, 17.2rem);
+                max-width: 7rem;
             }
         }
 

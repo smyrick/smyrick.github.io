@@ -1,0 +1,38 @@
+<script>
+    document.querySelectorAll('[data-copy-email]').forEach((button) => {
+        const email = button.dataset.copyEmail;
+        const wrap = button.closest('[data-copy-wrap]');
+        const toast = wrap?.querySelector('[data-copy-toast]');
+
+        if (!email) {
+            return;
+        }
+
+        button.addEventListener('click', async () => {
+            const defaultLabel = `Copy ${email}`;
+
+            const showToast = (message: string) => {
+                if (!toast) {
+                    return;
+                }
+
+                toast.textContent = message;
+                wrap?.classList.add('is-copied');
+            };
+
+            try {
+                await navigator.clipboard.writeText(email);
+                showToast('Copied');
+                button.setAttribute('aria-label', 'Copied');
+            } catch {
+                showToast('Copy failed');
+                button.setAttribute('aria-label', 'Copy failed');
+            }
+
+            window.setTimeout(() => {
+                wrap?.classList.remove('is-copied');
+                button.setAttribute('aria-label', defaultLabel);
+            }, 2000);
+        });
+    });
+</script>
