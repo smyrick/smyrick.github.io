@@ -4,38 +4,34 @@ Personal website and blog for Shane Myrick.
 
 Live site: <https://shanemyrick.com/>
 
-This site provides profile information, social/contact links, and long-form blog content. It is built with [Gatsby](https://www.gatsbyjs.com/) and originally started from [gatsby-starter-julia](https://www.gatsbyjs.com/starters/niklasmtj/gatsby-starter-julia).
-
 ## Tech Stack
 
-- Gatsby 2
-- React 16
-- Emotion 10
-- Markdown blog posts through `gatsby-transformer-remark`
-- Gatsby image processing through Sharp plugins
-- Font Awesome social icons
-- Node 14 from `.nvmrc`
-- npm with `package-lock.json`
+- Astro
+- Tailwind CSS
+- Markdown content collections
+- Node 24 from `.nvmrc`
+- npm 11.16.0 with `package-lock.json`
+- GitHub Pages deployment
 
 ## Repository Guide
 
 - `AGENTS.md` - Instructions for AI agents working in this repo.
-- `ARCHITECTURE.md` - Architecture overview, diagrams, content pipeline, and deployment flow.
-- `CONTRIBUTING.md` - Existing local setup and contribution notes.
-- `src/pages/` - Gatsby page components.
-- `src/components/` - Shared React components and global CSS.
-- `src/templates/` - Gatsby templates for generated pages.
-- `src/content/` - Markdown blog posts.
-- `src/images/` - Images processed by Gatsby.
-- `static/` - Static files copied directly into the built site.
+- `ARCHITECTURE.md` - Architecture overview, content pipeline, and deployment flow.
+- `src/pages/` - Astro file-based routes.
+- `src/components/` - Shared Astro components.
+- `src/layouts/` - Page layouts.
+- `src/content/blog/` - Markdown blog posts.
+- `src/lib/` - Small content helpers.
+- `public/` - Static files copied directly into the built site.
 
 ## Local Setup
 
 Use the Node version from `.nvmrc`.
 
 ```bash
-nvm use 14
-npm install
+nvm use 24
+npm install -g npm@11.16.0
+npm ci
 ```
 
 Start the local development server:
@@ -56,40 +52,34 @@ Serve the production build locally:
 npm run serve
 ```
 
-Clean Gatsby caches and generated output:
-
-```bash
-npm run clean
-```
-
 ## Content Editing
 
-Blog posts live in `src/content/` as Markdown files with frontmatter. Gatsby loads these files and creates public blog pages through `gatsby-node.js` and `src/templates/blog-post.js`.
+Blog posts live in `src/content/blog/` as Markdown files with frontmatter validated by `src/content.config.ts`.
 
 Common frontmatter fields:
 
 - `path` - Public URL for the post.
 - `title` - Display title.
+- `description` - Optional SEO/listing description.
 - `date` - Publish date used for sorting and display.
-- `draft` - Draft posts are excluded from generated pages.
-- `featuredImage` - Image used by the blog post template.
+- `draft` - Draft posts are excluded from pages.
+- `featuredImage` - Optional public image path.
 
-Site-wide title, subtitle, description, social links, site URL, and default social image are configured in `gatsby-config.js` under `siteMetadata`.
+Site-wide identity, social links, and default metadata are in `src/site.ts`.
 
 ## Build and Deployment
 
-Pull requests run a GitHub Actions build check with:
+Pull requests run:
 
 ```bash
-npm install
+npm ci
 npm run build
 ```
 
-Pushes to `master` run the publish workflow, build the site, and deploy the generated `public/` directory to GitHub Pages with the CNAME `shanemyrick.com`.
+Pushes to `master` build the Astro site and deploy `dist/` to GitHub Pages. `public/CNAME` preserves the `shanemyrick.com` custom domain.
 
-## Known Maintenance Notes
+## Maintenance Notes
 
-- The project uses an older Gatsby/React stack: Gatsby 2, React 16, and Node 14.
 - There is no dedicated test suite; `npm run build` is the main regression check.
+- The site intentionally has no client framework runtime.
 - The live site updates only after GitHub Actions rebuilds and publishes from `master`.
-- Dependency and tooling modernization should be planned separately from content or design updates.

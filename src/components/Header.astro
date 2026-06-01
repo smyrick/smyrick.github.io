@@ -1,0 +1,21 @@
+---
+const nav = [
+  { label: 'Home', href: '/' },
+  { label: 'Writing', href: '/blog' },
+];
+---
+
+<header class="mx-auto flex w-full max-w-5xl items-center justify-between px-5 py-5 sm:px-8">
+  <a class="text-sm font-semibold tracking-wide text-[var(--color-ink)]" href="/">
+    Shane Myrick
+  </a>
+  <nav aria-label="Primary navigation" class="flex items-center gap-5 text-sm text-[var(--color-muted)]">
+    {
+      nav.map((item) => (
+        <a class="transition hover:text-[var(--color-accent-strong)]" href={item.href}>
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

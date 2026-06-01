@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Not found" description="Page not found." path="/404">
+  <section class="mx-auto min-h-[60svh] w-full max-w-3xl px-5 py-20 sm:px-8">
+    <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]">
+      404
+    </p>
+    <h1 class="text-4xl font-semibold text-[var(--color-ink)]">Page not found.</h1>
+    <p class="mt-4 text-lg text-[var(--color-muted)]">
+      That page is not here. The writing archive and home page are still the stable paths.
+    </p>
+    <div class="mt-8 flex gap-3">
+      <a class="rounded-full border border-[var(--color-line)] px-4 py-2 text-sm font-medium" href="/">
+        Home
+      </a>
+      <a class="rounded-full border border-[var(--color-line)] px-4 py-2 text-sm font-medium" href="/blog">
+        Writing
+      </a>
+    </div>
+  </section>
+</BaseLayout>

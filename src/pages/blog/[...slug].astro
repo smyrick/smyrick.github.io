@@ -1,0 +1,59 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  formatDate,
+  getPublishedPosts,
+  postDescription,
+  postSlug,
+  readingTime,
+} from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+
+  return posts.map((post) => ({
+    params: { slug: postSlug(post) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const description = postDescription(post);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={description}
+  image={post.data.featuredImage ?? '/shane-profile.jpeg'}
+  path={post.data.path}
+  article
+>
+  <article class="mx-auto w-full max-w-3xl px-5 py-12 sm:px-8">
+    <a class="text-sm font-medium text-[var(--color-accent-strong)]" href="/blog">
+      Back to writing
+    </a>
+    <header class="mt-8">
+      <h1 class="text-4xl font-semibold leading-tight text-[var(--color-ink)] sm:text-5xl">
+        {post.data.title}
+      </h1>
+      <p class="mt-4 text-sm text-[var(--color-muted)]">
+        {formatDate(post.data.date)} / {readingTime(post.body)}
+      </p>
+      {
+        post.data.featuredImage && (
+          <img
+            class="mt-8 aspect-[16/9] w-full rounded-lg border border-[var(--color-line)] object-cover"
+            src={post.data.featuredImage}
+            alt=""
+            loading="eager"
+          />
+        )
+      }
+    </header>
+    <div class="prose mt-10">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

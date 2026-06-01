@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, getPublishedPosts, postDescription, readingTime } from '../lib/posts';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout title="Writing" description="Writing archive from Shane Myrick." path="/blog">
+  <section class="mx-auto w-full max-w-3xl px-5 py-14 sm:px-8">
+    <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]">
+      Writing
+    </p>
+    <h1 class="text-4xl font-semibold leading-tight text-[var(--color-ink)] sm:text-5xl">
+      Notes worth keeping.
+    </h1>
+    <p class="mt-4 text-lg leading-8 text-[var(--color-muted)]">
+      Public archive for the occasional longer post.
+    </p>
+
+    <div class="mt-12 space-y-10">
+      {
+        posts.map((post) => (
+          <article class="border-t border-[var(--color-line)] pt-8">
+            <a class="group" href={post.data.path}>
+              <h2 class="text-2xl font-semibold leading-tight text-[var(--color-ink)] transition group-hover:text-[var(--color-accent-strong)]">
+                {post.data.title}
+              </h2>
+            </a>
+            <p class="mt-2 text-sm text-[var(--color-muted)]">
+              {formatDate(post.data.date)} / {readingTime(post.body)}
+            </p>
+            <p class="mt-4 leading-7 text-[var(--color-muted)]">{postDescription(post)}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

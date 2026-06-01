@@ -1,33 +1,36 @@
 # Contributing
 
-This is a personal website/blog using [Gatsby](https://www.gatsbyjs.org/), [Markdown](https://www.markdownguide.org/), [Styled Components](https://styled-components.com/), & [React Font Awesome](https://github.com/FortAwesome/react-fontawesome/).
+This is a personal website/blog using Astro, Tailwind CSS, Markdown, and GitHub Pages.
 
 ## Environment Setup
 
-Install the version of Node defined in `.nvmrc`. You can use [nvm](https://github.com/nvm-sh/nvm) quickly change your Node versions.
+Install the version of Node defined in `.nvmrc`.
+
+```bash
+nvm use 24
+npm install -g npm@11.16.0
+npm ci
+```
 
 ## Running Locally
 
-Install the local dependencies
-```bash
-npm install
-```
+Start the local server:
 
-Start the local server
 ```bash
 npm start
 ```
 
 ## Build
-To see the production build run:
+
+To create the production build:
 
 ```bash
 npm run build
 ```
 
-The compiled site will be available at `/public`.
+The compiled site will be available in `dist/`.
 
-If you want to see the compiled site locally run:
+Preview the compiled site locally:
 
 ```bash
 npm run serve
@@ -35,4 +38,4 @@ npm run serve
 
 ## Deployment
 
-The content is published to GitHub pages on every merge with GitHub Actions. See the [workflow files](./.github/workflows) for more details.
+The site is published to GitHub Pages on every push to `master`. See `.github/workflows/` for the exact build and deploy steps.

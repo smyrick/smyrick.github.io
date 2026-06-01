@@ -1,0 +1,44 @@
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export type BlogPost = CollectionEntry<'blog'>;
+
+export function readingTime(body: string) {
+  const words = body.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.ceil(words / 225));
+  return `${minutes} min read`;
+}
+
+export function postSlug(post: BlogPost) {
+  return post.data.path.replace(/^\/blog\//, '');
+}
+
+export function postDescription(post: BlogPost) {
+  if (post.data.description) {
+    return post.data.description;
+  }
+
+  return post.body
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/[#_*[\]()`>~-]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 160);
+}
+
+export async function getPublishedPosts() {
+  const now = new Date();
+  const posts = await getCollection('blog', ({ data }) => {
+    return data.draft !== true && data.date <= now;
+  });
+
+  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+}
+
+export function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
+}

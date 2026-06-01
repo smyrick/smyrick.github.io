@@ -38,9 +38,10 @@ typings/
 # dotenv environment variables file
 .env
 
-# gatsby files
+# Generated site output
 .cache/
-public
+.astro/
+dist/
 
 # Mac files
 .DS_Store
