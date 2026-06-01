@@ -5,69 +5,362 @@ import { site } from '../site';
 
 const posts = await getPublishedPosts();
 const latestPost = posts[0];
+const homeLinks = [...site.social, { label: 'Writing', href: '/blog' }];
 ---
 
 <BaseLayout title="Home" description={site.description} path="/">
-  <section class="mx-auto grid min-h-[calc(100svh-10rem)] w-full max-w-5xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
-    <div>
-      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]">
-        {site.location}
-      </p>
-      <h1 class="max-w-3xl text-5xl font-semibold leading-none text-[var(--color-ink)] sm:text-6xl lg:text-7xl">
-        {site.name}
-      </h1>
-      <p class="mt-6 max-w-2xl text-xl leading-8 text-[var(--color-muted)]">
-        {site.role} This is the quiet home base for contact, writing, and whatever is worth keeping outside the feed.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        {
-          site.social.map((item) => (
-            <a
-              class="rounded-full border border-[var(--color-line)] bg-white/45 px-4 py-2 text-sm font-medium text-[var(--color-ink)] shadow-sm transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent-strong)]"
-              href={item.href}
+    <section
+        class="landing-hero mx-auto grid min-h-[calc(100svh-10rem)] w-full max-w-5xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]"
+    >
+        <div class="portrait-stage" data-portrait-stage>
+            <div class="portrait-plate" aria-hidden="true"></div>
+            <div class="portrait-ring" aria-hidden="true"></div>
+            <span class="identity-chip identity-chip-code">Seattle / code</span>
+            <img
+                class="portrait-image"
+                src="/shane-profile.jpeg"
+                alt="Shane Myrick"
+                width="460"
+                height="460"
+            />
+            <span class="identity-chip identity-chip-coaching">coaching</span>
+        </div>
+
+        <div class="relative z-10">
+            <p
+                class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]"
             >
-              {item.label}
-            </a>
-          ))
-        }
-      </div>
-    </div>
+                {site.location}
+            </p>
+            <h1
+                class="max-w-3xl text-5xl font-semibold leading-none text-[var(--color-ink)] sm:text-6xl lg:text-7xl"
+            >
+                {site.name}
+            </h1>
+            <p
+                class="mt-6 max-w-2xl text-xl leading-8 text-[var(--color-muted)]"
+            >
+                {site.role} This is the quiet home base for contact, writing, and
+                whatever is worth keeping outside the feed.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+                {
+                    homeLinks.map((item) => (
+                        <a
+                            class="rounded-full border border-[var(--color-line)] bg-white/55 px-4 py-2 text-sm font-semibold text-[var(--color-ink)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent-strong)]"
+                            href={item.href}
+                        >
+                            {item.label}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
 
-    <div class="mx-auto w-full max-w-sm lg:ml-auto">
-      <img
-        class="aspect-square w-full rounded-[2rem] border border-white/70 object-cover shadow-2xl shadow-[#9c7b5c]/20"
-        src="/shane-profile.jpeg"
-        alt="Shane Myrick"
-        width="1301"
-        height="1301"
-      />
-    </div>
-  </section>
+    <section class="mx-auto w-full max-w-5xl px-5 pb-16 sm:px-8">
+        <div
+            class="grid gap-6 border-t border-[var(--color-line)] pt-8 md:grid-cols-[0.7fr_1.3fr]"
+        >
+            <div>
+                <h2
+                    class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]"
+                >
+                    Writing
+                </h2>
+            </div>
+            <div>
+                {
+                    latestPost ? (
+                        <a class="group block" href={latestPost.data.path}>
+                            <p class="text-sm text-[var(--color-muted)]">
+                                Latest post
+                            </p>
+                            <h3 class="mt-2 text-2xl font-semibold leading-tight text-[var(--color-ink)] transition group-hover:text-[var(--color-accent-strong)]">
+                                {latestPost.data.title}
+                            </h3>
+                            <p class="mt-3 max-w-2xl text-[var(--color-muted)]">
+                                Old notes stay public here. New writing shows up
+                                when it is useful enough to keep.
+                            </p>
+                        </a>
+                    ) : (
+                        <p class="text-[var(--color-muted)]">
+                            Writing archive coming back soon.
+                        </p>
+                    )
+                }
+            </div>
+        </div>
+    </section>
 
-  <section class="mx-auto w-full max-w-5xl px-5 pb-16 sm:px-8">
-    <div class="grid gap-6 border-t border-[var(--color-line)] pt-8 md:grid-cols-[0.7fr_1.3fr]">
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-accent-strong)]">
-          Writing
-        </h2>
-      </div>
-      <div>
-        {
-          latestPost ? (
-            <a class="group block" href={latestPost.data.path}>
-              <p class="text-sm text-[var(--color-muted)]">Latest post</p>
-              <h3 class="mt-2 text-2xl font-semibold leading-tight text-[var(--color-ink)] transition group-hover:text-[var(--color-accent-strong)]">
-                {latestPost.data.title}
-              </h3>
-              <p class="mt-3 max-w-2xl text-[var(--color-muted)]">
-                Old notes stay public here. New writing shows up when it is useful enough to keep.
-              </p>
-            </a>
-          ) : (
-            <p class="text-[var(--color-muted)]">Writing archive coming back soon.</p>
-          )
+    <script>
+        const portraitStage = document.querySelector('[data-portrait-stage]');
+        const reducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+
+        if (portraitStage && !reducedMotion.matches) {
+            portraitStage.addEventListener('pointermove', (event) => {
+                const bounds = portraitStage.getBoundingClientRect();
+                const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+                const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+                portraitStage.style.setProperty(
+                    '--portrait-tilt-x',
+                    `${y * -7}deg`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-tilt-y',
+                    `${x * 9}deg`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-shift-x',
+                    `${x * 14}px`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-shift-y',
+                    `${y * 14}px`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-ring-x',
+                    `${x * -7}px`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-ring-y',
+                    `${y * -7}px`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-chip-code-x',
+                    `${x * -5}px`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-chip-code-y',
+                    `${y * -5}px`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-chip-coaching-x',
+                    `${x * 6}px`
+                );
+                portraitStage.style.setProperty(
+                    '--portrait-chip-coaching-y',
+                    `${y * 6}px`
+                );
+            });
+
+            portraitStage.addEventListener('pointerleave', () => {
+                portraitStage.style.removeProperty('--portrait-tilt-x');
+                portraitStage.style.removeProperty('--portrait-tilt-y');
+                portraitStage.style.removeProperty('--portrait-shift-x');
+                portraitStage.style.removeProperty('--portrait-shift-y');
+                portraitStage.style.removeProperty('--portrait-ring-x');
+                portraitStage.style.removeProperty('--portrait-ring-y');
+                portraitStage.style.removeProperty('--portrait-chip-code-x');
+                portraitStage.style.removeProperty('--portrait-chip-code-y');
+                portraitStage.style.removeProperty(
+                    '--portrait-chip-coaching-x'
+                );
+                portraitStage.style.removeProperty(
+                    '--portrait-chip-coaching-y'
+                );
+            });
         }
-      </div>
-    </div>
-  </section>
+    </script>
+
+    <style>
+        .landing-hero {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .landing-hero::before {
+            position: absolute;
+            inset: 1.5rem 0;
+            z-index: -1;
+            border: 1px solid rgba(226, 209, 191, 0.72);
+            border-radius: 2rem;
+            background:
+                radial-gradient(
+                    circle at 12% 25%,
+                    rgba(47, 111, 101, 0.14),
+                    transparent 24rem
+                ),
+                linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.34),
+                    rgba(245, 234, 220, 0.74)
+                );
+            content: '';
+        }
+
+        .portrait-stage {
+            --portrait-tilt-x: 0deg;
+            --portrait-tilt-y: 0deg;
+            --portrait-shift-x: 0px;
+            --portrait-shift-y: 0px;
+            --portrait-ring-x: 0px;
+            --portrait-ring-y: 0px;
+            --portrait-chip-code-x: 0px;
+            --portrait-chip-code-y: 0px;
+            --portrait-chip-coaching-x: 0px;
+            --portrait-chip-coaching-y: 0px;
+            position: relative;
+            min-height: min(88vw, 27rem);
+            transform-style: preserve-3d;
+            perspective: 56rem;
+        }
+
+        .portrait-image,
+        .portrait-plate,
+        .portrait-ring,
+        .identity-chip {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        .portrait-image {
+            z-index: 2;
+            width: min(78vw, 24rem);
+            aspect-ratio: 1;
+            height: auto;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 2rem;
+            box-shadow: 0 2rem 5rem rgba(156, 123, 92, 0.24);
+            object-fit: cover;
+            transform: translate(-50%, -50%)
+                translate3d(
+                    var(--portrait-shift-x),
+                    var(--portrait-shift-y),
+                    2.5rem
+                )
+                rotateX(var(--portrait-tilt-x)) rotateY(var(--portrait-tilt-y))
+                rotate(-2deg);
+            transition: transform 180ms ease-out;
+        }
+
+        .portrait-plate {
+            z-index: 0;
+            width: min(76vw, 23rem);
+            aspect-ratio: 1;
+            border-radius: 2.2rem;
+            background: rgba(47, 111, 101, 0.14);
+            transform: translate(-55%, -43%) rotate(-7deg);
+        }
+
+        .portrait-ring {
+            z-index: 1;
+            width: min(72vw, 22rem);
+            aspect-ratio: 1;
+            border: 1px solid rgba(23, 76, 70, 0.32);
+            border-radius: 999px;
+            transform: translate(
+                    calc(-42% + var(--portrait-ring-x)),
+                    calc(-58% + var(--portrait-ring-y))
+                )
+                rotate(8deg);
+            transition: transform 180ms ease-out;
+        }
+
+        .identity-chip {
+            z-index: 3;
+            border: 1px solid var(--color-line);
+            border-radius: 999px;
+            background: rgba(255, 250, 243, 0.9);
+            box-shadow: 0 0.9rem 2rem rgba(32, 25, 23, 0.08);
+            color: var(--color-accent-strong);
+            font-size: 0.8rem;
+            font-weight: 750;
+            line-height: 1;
+            padding: 0.7rem 0.85rem;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            transform-style: flat;
+        }
+
+        .identity-chip-code {
+            transform: translate3d(
+                calc(-190% + var(--portrait-chip-code-x)),
+                calc(-340% + var(--portrait-chip-code-y)),
+                4rem
+            );
+        }
+
+        .identity-chip-coaching {
+            color: #b45b42;
+            transform: translate3d(
+                calc(85% + var(--portrait-chip-coaching-x)),
+                calc(300% + var(--portrait-chip-coaching-y)),
+                4rem
+            );
+        }
+
+        @media (max-width: 1023px) {
+            .landing-hero::before {
+                inset: 0.75rem 0;
+            }
+
+            .portrait-stage {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .identity-chip-code {
+                transform: translate3d(
+                    calc(-125% + var(--portrait-chip-code-x)),
+                    calc(-335% + var(--portrait-chip-code-y)),
+                    4rem
+                );
+            }
+        }
+
+        @media (max-width: 520px) {
+            .landing-hero::before {
+                border-radius: 1.5rem;
+            }
+
+            .portrait-stage {
+                min-height: 20rem;
+            }
+
+            .portrait-image {
+                width: min(78vw, 19rem);
+                border-radius: 1.5rem;
+            }
+
+            .portrait-plate {
+                width: min(76vw, 18rem);
+                border-radius: 1.65rem;
+            }
+
+            .portrait-ring {
+                width: min(75vw, 18.5rem);
+            }
+
+            .identity-chip-code {
+                transform: translate3d(
+                    calc(-118% + var(--portrait-chip-code-x)),
+                    calc(-315% + var(--portrait-chip-code-y)),
+                    4rem
+                );
+            }
+
+            .identity-chip-coaching {
+                transform: translate3d(
+                    calc(45% + var(--portrait-chip-coaching-x)),
+                    calc(270% + var(--portrait-chip-coaching-y)),
+                    4rem
+                );
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .portrait-image,
+            .portrait-ring,
+            .identity-chip {
+                transition: none;
+            }
+        }
+    </style>
 </BaseLayout>
