@@ -25,6 +25,25 @@ export function postDescription(post: BlogPost) {
     .slice(0, 160);
 }
 
+export function postTypeLabel(post: BlogPost) {
+  const labels = {
+    post: 'Post',
+    video: 'Video',
+    talk: 'Talk',
+    webinar: 'Webinar',
+  };
+
+  return labels[post.data.type];
+}
+
+export function postMeta(post: BlogPost) {
+  if (post.data.type === 'post') {
+    return readingTime(post.body);
+  }
+
+  return postTypeLabel(post);
+}
+
 export async function getPublishedPosts() {
   const now = new Date();
   const posts = await getCollection('blog', ({ data }) => {

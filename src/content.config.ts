@@ -10,6 +10,11 @@ const blog = defineCollection({
     draft: z.boolean().default(false),
     path: z.string().regex(/^\/blog\/[a-z0-9-]+$/),
     featuredImage: z.string().optional(),
+    type: z.enum(['post', 'video', 'talk', 'webinar']).default('post'),
+    videoUrl: z.string().url().optional(),
+    embedUrl: z.string().url().optional(),
+    event: z.string().optional(),
+    source: z.string().optional(),
   }),
 });
 

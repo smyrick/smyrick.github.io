@@ -6,7 +6,7 @@ import {
   getPublishedPosts,
   postDescription,
   postSlug,
-  readingTime,
+  postMeta,
 } from '../../lib/posts';
 
 export async function getStaticPaths() {
@@ -39,7 +39,7 @@ const description = postDescription(post);
         {post.data.title}
       </h1>
       <p class="mt-4 text-sm text-[var(--color-muted)]">
-        {formatDate(post.data.date)} / {readingTime(post.body)}
+        {formatDate(post.data.date)} / {postMeta(post)}
       </p>
       {
         post.data.featuredImage && (
@@ -55,5 +55,34 @@ const description = postDescription(post);
     <div class="prose mt-10">
       <Content />
     </div>
+    {
+      post.data.embedUrl && (
+        <div class="media-embed mt-10">
+          <iframe
+            src={post.data.embedUrl}
+            title={post.data.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          />
+        </div>
+      )
+    }
+    {
+      post.data.videoUrl && (
+        <p class="mt-5 text-sm text-[var(--color-muted)]">
+          Watch on{' '}
+          <a
+            class="font-medium text-[var(--color-accent-strong)] underline underline-offset-4"
+            href={post.data.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {post.data.source ?? 'the source site'}
+          </a>
+          .
+        </p>
+      )
+    }
   </article>
 </BaseLayout>
