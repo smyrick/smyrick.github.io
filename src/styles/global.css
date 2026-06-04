@@ -1,123 +1,132 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  color-scheme: light;
-  --color-ink: #201917;
-  --color-muted: #725f58;
-  --color-paper: #fffaf3;
-  --color-panel: #f5eadc;
-  --color-line: #e2d1bf;
-  --color-accent: #2f6f65;
-  --color-accent-strong: #174c46;
+    color-scheme: light;
+    --color-ink: #201917;
+    --color-muted: #725f58;
+    --color-paper: #fffaf3;
+    --color-panel: #f5eadc;
+    --color-line: #e2d1bf;
+    --color-accent: #2f6f65;
+    --color-accent-strong: #174c46;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  display: flex;
-  min-height: 100dvh;
-  flex-direction: column;
-  margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(47, 111, 101, 0.12), transparent 30rem),
-    linear-gradient(180deg, #fffaf3 0%, #f9f1e8 100%);
-  color: var(--color-ink);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(47, 111, 101, 0.12),
+            transparent 30rem
+        ),
+        linear-gradient(180deg, #fffaf3 0%, #f9f1e8 100%);
+    color: var(--color-ink);
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 main {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  min-height: 0;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
 }
 
 a {
-  color: inherit;
+    color: inherit;
 }
 
 ::selection {
-  background: rgba(47, 111, 101, 0.22);
+    background: rgba(47, 111, 101, 0.22);
 }
 
 .prose {
-  color: var(--color-ink);
+    color: var(--color-ink);
 }
 
 .prose :where(h2, h3) {
-  margin-top: 2.2rem;
-  margin-bottom: 0.8rem;
-  line-height: 1.15;
+    margin-top: 2.2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.15;
 }
 
 .prose h2 {
-  font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 .prose h3 {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
 }
 
 .prose p,
 .prose li {
-  color: var(--color-muted);
-  font-size: 1.03rem;
-  line-height: 1.75;
+    color: var(--color-muted);
+    font-size: 1.03rem;
+    line-height: 1.75;
 }
 
 .prose a {
-  color: var(--color-accent-strong);
-  text-decoration: underline;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+    color: var(--color-accent-strong);
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
 }
 
 .prose pre {
-  overflow-x: auto;
-  border-radius: 0.5rem;
-  border: 1px solid #2b2927;
-  padding: 1rem;
-  background: #171513;
-  color: #f8efe6;
-  font-size: 0.9rem;
-  line-height: 1.65;
+    overflow-x: auto;
+    border-radius: 0.5rem;
+    border: 1px solid #2b2927;
+    padding: 1rem;
+    background: #171513;
+    color: #f8efe6;
+    font-size: 0.9rem;
+    line-height: 1.65;
 }
 
 .prose code {
-  border-radius: 0.28rem;
-  background: rgba(32, 25, 23, 0.08);
-  padding: 0.12rem 0.28rem;
-  font-size: 0.92em;
+    border-radius: 0.28rem;
+    background: rgba(32, 25, 23, 0.08);
+    padding: 0.12rem 0.28rem;
+    font-size: 0.92em;
 }
 
 .prose pre code {
-  background: transparent;
-  padding: 0;
+    background: transparent;
+    padding: 0;
 }
 
 .prose hr {
-  margin: 2rem 0;
-  border: 0;
-  border-top: 1px solid var(--color-line);
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid var(--color-line);
 }
 
 .media-embed {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border: 1px solid var(--color-line);
-  border-radius: 0.5rem;
-  background: #171513;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    background: #171513;
 }
 
 .media-embed iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }

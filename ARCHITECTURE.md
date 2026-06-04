@@ -52,16 +52,16 @@ npm run serve
 
 ## Source Layout
 
-| Path | Responsibility |
-| --- | --- |
-| `src/pages/` | File-based Astro routes. |
-| `src/components/` | Shared header, footer, and SEO components. |
-| `src/layouts/` | Shared page layout and document shell. |
-| `src/content/blog/` | Markdown blog posts with validated frontmatter. |
-| `src/lib/` | Content helpers for published posts, slugs, descriptions, dates, and reading time. |
-| `src/styles/` | Tailwind import and global site styles. |
-| `public/` | Static files copied directly into the build output. |
-| `.github/workflows/` | PR build checks and GitHub Pages publishing. |
+| Path                 | Responsibility                                                                     |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| `src/pages/`         | File-based Astro routes.                                                           |
+| `src/components/`    | Shared header, footer, and SEO components.                                         |
+| `src/layouts/`       | Shared page layout and document shell.                                             |
+| `src/content/blog/`  | Markdown blog posts with validated frontmatter.                                    |
+| `src/lib/`           | Content helpers for published posts, slugs, descriptions, dates, and reading time. |
+| `src/styles/`        | Tailwind import and global site styles.                                            |
+| `public/`            | Static files copied directly into the build output.                                |
+| `.github/workflows/` | PR build checks and GitHub Pages publishing.                                       |
 
 ## Content Pipeline
 
