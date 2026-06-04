@@ -17,7 +17,8 @@
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "format": "prettier --write .",
     "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "serve": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+    "serve": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "validate:content": "ASTRO_TELEMETRY_DISABLED=1 astro sync"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

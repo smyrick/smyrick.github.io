@@ -1,9 +1,9 @@
 ---
-title: "Publishing to GitHub Packages with Gradle and GitHub Actions"
-date: "2019-12-04"
+title: 'Publishing to GitHub Packages with Gradle and GitHub Actions'
+date: '2019-12-04'
 draft: false
-path: "/blog/publishing-github-packages-gradle-github-actions"
-description: "Publishing a Gradle library to GitHub Packages with GitHub Actions."
+path: '/blog/publishing-github-packages-gradle-github-actions'
+description: 'Publishing a Gradle library to GitHub Packages with GitHub Actions.'
 featuredImage: /blog/github-actions.png
 ---
 
@@ -71,6 +71,7 @@ version=0.0.1-SNAPSHOT
 ```
 
 ## Creating GitHub Actions
+
 Now that we have Gradle configured the next step is to execute the publish task in GitHub Actions. Create a new workflow file in `.github/workflows`. A current version of the workflow can be found in the [kotlin-extensions repo](https://github.com/smyrick/kotlin-extensions/blob/master/.github/workflows/publish-release.yml).
 
 This workflow is publishing a new package when there is a new release in GitHub. This means that there will be tag created with the release version when this workflow is triggered.
@@ -80,8 +81,8 @@ This workflow is publishing a new package when there is a new release in GitHub.
 name: Publish release
 
 on:
-  release:
-    types: [published]
+    release:
+        types: [published]
 ```
 
 Next we need to setup the steps to run on this trigger. We will checkout the code at the tagged version; set up our JVM with a specified version; and finally run the following command, passing in the new version.
@@ -95,30 +96,30 @@ The version name comes from the git tag value. Since git tags are published with
 ```yml
 # publish-release.yml continued...
 jobs:
-  publish-release:
-    runs-on: ubuntu-latest
+    publish-release:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout latest code
-        uses: actions/checkout@v1
+        steps:
+            - name: Checkout latest code
+              uses: actions/checkout@v1
 
-      - name: Set up JDK 11
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
+            - name: Set up JDK 11
+              uses: actions/setup-java@v1
+              with:
+                  java-version: 11
 
-      - name: Publish artifact
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - name: Publish artifact
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-        # The GITHUB_REF tag comes in the format 'refs/tags/xxx'.
-        # If we split on '/' and take the 3rd value,
-        # we can get the release name.
-        run: |
-          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3)
-          echo "New version: ${NEW_VERSION}"
-          echo "Github username: ${GITHUB_ACTOR}"
-          ./gradlew -Pversion=${NEW_VERSION} publish
+              # The GITHUB_REF tag comes in the format 'refs/tags/xxx'.
+              # If we split on '/' and take the 3rd value,
+              # we can get the release name.
+              run: |
+                  NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3)
+                  echo "New version: ${NEW_VERSION}"
+                  echo "Github username: ${GITHUB_ACTOR}"
+                  ./gradlew -Pversion=${NEW_VERSION} publish
 ```
 
 ## Monitoring Packages
@@ -127,12 +128,12 @@ After we have Gradle setup and the GitHub Actions checked in, we can release a n
 
 As an example, [this tag release](https://github.com/smyrick/kotlin-extensions/releases/tag/0.0.19) resulted in [this package](https://github.com/smyrick/kotlin-extensions/packages/55467?version=0.0.19) being published. From the packages view we can also track the number of downloads and other packages using the specific version. This can be helpful for the new features coming to GitHub [around security](https://help.github.com/en/github/managing-security-vulnerabilities/managing-security-vulnerabilities-in-your-project), which will allow us to alert all dependents of any vulnerabilities in a specific version and ask them to update.
 
-______
+---
 
 That wraps up this short post. I hope you will find the information helpful so you don’t have to spend an afternoon reading through the GitHub documentation as I did (which is still very good).
 
 Feel free to share your own experience with GitHub Actions and Packages with me on [Twitter](https://twitter.com/shanemyrick) and follow me for future articles! 😃
 
-______
+---
 
 _This was [orginally posted to Medium](https://medium.com/@shanemyrick/publishing-to-github-packages-with-gradle-and-github-actions-4ad842634c4e) and moved to my personal blog at a later date._

@@ -1,52 +1,54 @@
 name: Publish Latest Code
 
 on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+    push:
+        branches:
+            - master
+    workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    contents: read
+    pages: write
+    id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+    group: pages
+    cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.repository == 'smyrick/smyrick.github.io'
+    build:
+        runs-on: ubuntu-latest
+        if: github.repository == 'smyrick/smyrick.github.io'
 
-    steps:
-      - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
+            - uses: actions/setup-node@v4
+              with:
+                  node-version-file: .nvmrc
+                  cache: npm
 
-      - run: npm install -g npm@11.16.0
+            - run: npm install -g npm@11.16.0
 
-      - run: npm ci
+            - run: npm ci
 
-      - run: npm run build
+            - run: npm run validate:content
 
-      - uses: actions/configure-pages@v5
+            - run: npm run build
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+            - uses: actions/configure-pages@v5
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+            - uses: actions/upload-pages-artifact@v3
+              with:
+                  path: dist
 
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - id: deployment
+              uses: actions/deploy-pages@v4

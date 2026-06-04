@@ -40,6 +40,7 @@ nvm use 24
 npm install -g npm@11.16.0
 npm ci
 npm start
+npm run validate:content
 npm run build
 npm run serve
 ```
@@ -47,10 +48,11 @@ npm run serve
 Command meanings:
 
 - `npm start` runs `astro dev`.
-- `npm run build` creates the production site in `dist/`.
+- `npm run validate:content` validates all Markdown frontmatter against `src/content.config.ts`.
+- `npm run build` creates the production site in `dist/` and also validates content during sync.
 - `npm run serve` serves the built `dist/` output.
 
-There is no dedicated test suite. Treat `npm run build` as the main regression check.
+There is no dedicated test suite. Treat `npm run build` as the main regression check. Use `npm run validate:content` for a faster frontmatter-only check.
 
 ## Search and Inspection
 
