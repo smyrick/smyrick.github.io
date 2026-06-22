@@ -37,7 +37,7 @@ Use Node 24 from `.nvmrc`.
 
 ```bash
 nvm use 24
-npm install -g npm@11.16.0
+npm install -g npm@11.17.0
 npm ci
 npm start
 npm run validate:content
