@@ -5,6 +5,9 @@ draft: true
 path: '/blog/future-of-saas-00-master-index'
 type: 'post'
 ---
+
+Source notes for the draft blog post `src/content/blog/why-saas-still-matters.md`. Not part of the published site.
+
 ## Core Question
 
 In a world where AI lets anyone build personal and agentic tools, when and why do SaaS companies still matter?

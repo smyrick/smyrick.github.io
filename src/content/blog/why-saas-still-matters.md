@@ -120,7 +120,7 @@ So SaaS is not going away. It is being demoted. It moves from being the place wo
 
 ## Adversarial Check
 
-Verified against [11_adversarial_review_and_falsification.md](/blog/future-of-saas-11-adversarial-review-and-falsification):
+Verified against `research/future-of-saas/11-adversarial-review-and-falsification.md`:
 
 - [x] Load-bearing assumptions A1–A4 acknowledged and addressed (dedicated section with falsification triggers).
 - [x] No reassuring claim left unqualified: "durable is not value-capturing" caveat included; substrate-without-access-layer commoditization risk stated.
@@ -129,16 +129,16 @@ Verified against [11_adversarial_review_and_falsification.md](/blog/future-of-sa
 
 ## Sources
 
-This essay synthesizes the "Future of SaaS" research packet:
+This essay synthesizes the "Future of SaaS" research packet in `research/future-of-saas/`:
 
-- Thesis framing, the AI-vs-SaaS split, and the skin/skeleton, prototype/factory, and stage-set/rigging metaphors: [00_MASTER_INDEX.md](/blog/future-of-saas-00-master-index).
-- What AI can cheaply clone versus what stays hard to reproduce: [01_what_ai_can_clone.md](/blog/future-of-saas-01-what-ai-can-clone).
-- Hidden moats, covering entity graphs, invariants, integration gravity, and governance: [02_hidden_moats.md](/blog/future-of-saas-02-hidden-moats).
-- Unit economics, three-year TCO, and breakeven thresholds: [03_unit_economics_agents.md](/blog/future-of-saas-03-unit-economics-agents).
-- Where personal tools win and the Graduation Principle: [04_where_personal_tools_win.md](/blog/future-of-saas-04-where-personal-tools-win).
-- Platform convergence on graph + ecosystem + AI + governance: [06_platform_ecosystem.md](/blog/future-of-saas-06-platform-ecosystem).
-- Pricing shift from seats to outcomes: [07_pricing.md](/blog/future-of-saas-07-pricing).
-- Buyer's guide and the Backbones/Edges/Glue model: [08_buyers_guide.md](/blog/future-of-saas-08-buyers-guide).
-- Extensibility as anti-cloning retention strategy: [09_extensibility_anticloning.md](/blog/future-of-saas-09-extensibility-anticloning).
-- Cross-archetype stress test (Datadog, Expedia, CircleCI, AWS): [10_cross_archetype_stress_test.md](/blog/future-of-saas-10-cross-archetype-stress-test).
-- Adversarial review, falsification triggers, and threat model: [11_adversarial_review_and_falsification.md](/blog/future-of-saas-11-adversarial-review-and-falsification).
+- Thesis framing, the AI-vs-SaaS split, and the skin/skeleton, prototype/factory, and stage-set/rigging metaphors: `00-master-index.md`
+- What AI can cheaply clone versus what stays hard to reproduce: `01-what-ai-can-clone.md`
+- Hidden moats, covering entity graphs, invariants, integration gravity, and governance: `02-hidden-moats.md`
+- Unit economics, three-year TCO, and breakeven thresholds: `03-unit-economics-agents.md`
+- Where personal tools win and the Graduation Principle: `04-where-personal-tools-win.md`
+- Platform convergence on graph + ecosystem + AI + governance: `06-platform-ecosystem.md`
+- Pricing shift from seats to outcomes: `07-pricing.md`
+- Buyer's guide and the Backbones/Edges/Glue model: `08-buyers-guide.md`
+- Extensibility as anti-cloning retention strategy: `09-extensibility-anticloning.md`
+- Cross-archetype stress test (Datadog, Expedia, CircleCI, AWS): `10-cross-archetype-stress-test.md`
+- Adversarial review, falsification triggers, and threat model: `11-adversarial-review-and-falsification.md`
