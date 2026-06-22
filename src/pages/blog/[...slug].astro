@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { profileImage } from '../../lib/images';
 import {
   formatDate,
   getPublishedPosts,
@@ -26,7 +28,7 @@ const description = postDescription(post);
 <BaseLayout
   title={post.data.title}
   description={description}
-  image={post.data.featuredImage ?? '/shane-profile.jpeg'}
+  image={post.data.featuredImage ?? profileImage}
   path={post.data.path}
   article
 >
@@ -43,10 +45,12 @@ const description = postDescription(post);
       </p>
       {
         post.data.featuredImage && (
-          <img
+          <Image
             class="mt-8 aspect-[16/9] w-full rounded-lg border border-[var(--color-line)] object-cover"
             src={post.data.featuredImage}
             alt=""
+            widths={[640, 960, 1280]}
+            sizes="100vw"
             loading="eager"
           />
         )

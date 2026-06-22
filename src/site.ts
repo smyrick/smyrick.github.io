@@ -5,7 +5,6 @@ export const site = {
     title: 'Shane Myrick',
     description: 'Personal site and writing from Shane Myrick.',
     url: 'https://shanemyrick.com',
-    image: '/shane-profile.jpeg',
     email,
     location: 'Seattle, WA',
     role: 'Software developer, engineering leader, and fitness coach.',

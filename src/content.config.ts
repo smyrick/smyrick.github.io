@@ -8,7 +8,6 @@ const blogSchema = z
         date: z.coerce.date(),
         draft: z.boolean().default(false),
         path: z.string().regex(/^\/blog\/[a-z0-9-]+$/),
-        featuredImage: z.string().optional(),
         type: z.enum(['post', 'talk']).default('post'),
         videoUrl: z.string().url().optional(),
         embedUrl: z.string().url().optional(),
@@ -39,7 +38,10 @@ const blogSchema = z
 
 const blog = defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-    schema: blogSchema,
+    schema: ({ image }) =>
+        blogSchema.extend({
+            featuredImage: image().optional(),
+        }),
 });
 
 export const collections = { blog };

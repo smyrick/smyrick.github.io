@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialIcon from '../components/SocialIcon.astro';
+import { profileImage } from '../lib/images';
 import { site } from '../site';
 
 const homeLinks = [...site.social];
@@ -21,12 +23,13 @@ const pillIcon = {
         <div class="portrait-stage" data-portrait-stage>
             <div class="portrait-plate" aria-hidden="true"></div>
             <div class="portrait-ring" aria-hidden="true"></div>
-            <img
+            <Image
                 class="portrait-image"
-                src="/shane-profile.jpeg"
+                src={profileImage}
                 alt="Shane Myrick"
-                width="460"
-                height="460"
+                widths={[320, 460, 640, 920]}
+                sizes="(max-width: 640px) 9rem, 24rem"
+                loading="eager"
             />
         </div>
 
