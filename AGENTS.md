@@ -24,6 +24,21 @@ Primary source areas:
 - `public/` - Files copied directly to the published site.
 - `research/` - Pre-draft research and notes (not built or validated; see `research/README.md`).
 
+## Start Locally
+
+When the user asks to **start locally**, **run the dev server**, or **preview the site**, start Astro dev on Node 24.
+
+1. Check whether a server is already running on port `4321` (for example `lsof -i :4321`). If yes, report the URL and do not start a second instance.
+2. From the repo root, run this in the background:
+
+```bash
+source ~/.nvm/nvm.sh 2>/dev/null; nvm use 24 && if [ ! -d node_modules ]; then npm ci; fi && npm start
+```
+
+3. Wait for `Local http://localhost:4321/` in the output, then tell the user the site is ready at **http://localhost:4321/**.
+
+`npm start` runs `astro dev`. See [Commands](#commands) for build, validate, and preview.
+
 ## Research
 
 Use `research/<post-slug>/` for AI-assisted research, outlines, and source notes. This folder is excluded from the Astro build and content validation.
@@ -47,6 +62,8 @@ Do not put free-form research notes in `src/content/blog/`; every `.md` there mu
 ## Commands
 
 Use Node 24 from `.nvmrc`.
+
+For local dev, see [Start Locally](#start-locally) first.
 
 ```bash
 nvm use 24
