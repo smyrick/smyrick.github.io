@@ -37,6 +37,13 @@ const description = postDescription(post);
       Back to blog
     </a>
     <header class="mt-8">
+      {
+        import.meta.env.DEV && post.data.draft && (
+          <p class="mb-4 inline-block rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
+            Draft — not published
+          </p>
+        )
+      }
       <h1 class="text-4xl font-semibold leading-tight text-[var(--color-ink)] sm:text-5xl">
         {post.data.title}
       </h1>

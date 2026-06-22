@@ -14,6 +14,14 @@ export function isPublishedPost(data: BlogPost['data'], now = new Date()) {
     return data.draft !== true && utcDay(data.date) <= utcDay(now);
 }
 
+export function isVisiblePost(data: BlogPost['data'], now = new Date()) {
+    if (import.meta.env.DEV && data.draft === true) {
+        return true;
+    }
+
+    return isPublishedPost(data, now);
+}
+
 export function readingTime(body: string) {
     const words = body.trim().split(/\s+/).filter(Boolean).length;
     const minutes = Math.max(1, Math.ceil(words / 225));
@@ -56,7 +64,7 @@ export function postMeta(post: BlogPost) {
 
 export async function getPublishedPosts() {
     const posts = await getCollection('blog', ({ data }) =>
-        isPublishedPost(data)
+        isVisiblePost(data)
     );
 
     return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
