@@ -22,6 +22,19 @@ Primary source areas:
 - `src/lib/` - Small helpers for posts and formatting.
 - `src/styles/` - Global CSS and Tailwind import.
 - `public/` - Files copied directly to the published site.
+- `research/` - Pre-draft research and notes (not built or validated; see `research/README.md`).
+
+## Research
+
+Use `research/<post-slug>/` for AI-assisted research, outlines, and source notes. This folder is excluded from the Astro build and content validation.
+
+Workflow:
+
+1. Draft research in `research/<post-slug>/` (e.g. `notes.md`, `sources.md`).
+2. Promote into `src/content/blog/<post-slug>.md` with valid frontmatter (`title`, `date`, `path: /blog/<post-slug>`, `draft: true`).
+3. Set `draft: false` to publish.
+
+Do not put free-form research notes in `src/content/blog/`; every `.md` there must pass `src/content.config.ts`.
 
 ## Worktree Rules
 
