@@ -69,7 +69,14 @@ AI can copy the visible skin of a product. The durable value is in the skeleton 
    - Stress-test the thesis across very different SaaS categories.
 11. `11_adversarial_review_and_falsification.md`
    - Adversarial layer: load-bearing assumptions, falsifiable bets, and threat model. Consult before finalizing drafts.
+12. `12-app-substrates.md`
+   - Extends the thesis from OSS libraries and APIs to functional, extensible core apps: email clients, calendars, CRMs, and other substrates where users can add sandboxed custom logic while vendors charge for managed runtime, sync, trust, and governance.
 
 ## Through-Line
 
 This packet argues that AI will absolutely eat surface-level SaaS: generic UX, shallow workflows, and thin wrappers. But it does not eliminate the need for systems that safely hold shared truth and govern action. It demotes many apps from “workspace” to “substrate.”
+
+The app-substrate angle makes that demotion more concrete: SaaS may increasingly look like a maintained core app plus sanctioned extension runtime, not a fixed product or a raw API.
+
+The business model then becomes layered: charge for trusted state, API access,
+baseline app hooks, hosted runtime for customer extensions/agents, and governance.
