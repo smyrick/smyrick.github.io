@@ -80,6 +80,10 @@ a {
     line-height: 1.75;
 }
 
+.prose p {
+    margin: 1rem 0;
+}
+
 .prose ul,
 .prose ol {
     margin: 1.1rem 0;

@@ -6,9 +6,10 @@ draft: true
 path: '/blog/why-saas-still-matters'
 type: 'post'
 ---
-We are now at the stage where AI can build a minimal working version of your SaaS product in an afternoon. Dashboards, forms, workflows, and integrations that took a startup previously two years to ship are now a weekend prompt away. The era of personal software has arrived and a logical thought floating around is that people will increasingly build the tools they need instead of paying for them. So SaaS is finished, right?
 
-I propose that is half right. AI will eat a large part of what software used to charge for. But it eats the parts that previously cost time and not the parts where the true value lived.
+We are now at the stage where AI can build a minimal working version of your SaaS product in an afternoon. Dashboards, forms, workflows, and integrations that took a startup previously years to ship are now a weekend prompt away. The era of personal software has arrived and a logical thought floating around is that people will increasingly build the tools they need instead of paying for them. So SaaS is finished, right?
+
+I propose that is half right. AI will eat a large part of what software companies used to charge for. But it eats the parts that previously cost time and not the parts where the true value lived.
 
 The useful question is no longer "can we build this software at all?" It is "which parts of our stack should we own as agents and internal tools, and which parts should we still rent as trusted, governed backbones?"
 
@@ -18,13 +19,13 @@ AI can now clone the visible surface of most software. The UI components of list
 
 This has created lots of discussion in the industry about the Software Development Lifecycle (SDLC). AI compresses the Build phase of the SDLC. Getting to a demo which clones the same UI and inspires ideas is now easy, but getting to a durable, governable, production-grade system is still hard. Many demos we see are from people saying "I made this in an afternoon, let's ship it!". In most cases they have codified a true problem they have and have created some form of software that solves that problem, but that is just the [surface layer of the Product Lifecycle (PDLC)](https://medium.com/@dhiyaaizaaztiras/sdlc-vs-pdlc-unraveling-the-differences-in-development-life-cycles-c58fe992417c).
 
-I don't think that AI has removed any moat though, it still exists. Before we just had to spend lots of time and effort to swim across, where now AI has provided us a raft to get across with much less effort. So many of the vibe-coders get to the other side and ask "Now what?". You can follow the SDLC and make sure that feature or idea you built is a little more sound, but if you are asking AI to review itself it will not ask the big questions. The hard substrate of software is the part you cannot screenshot. It includes rich entity graphs and messy real-world relationships, invariants that encode domain semantics, compliance and auditability, and the operational maturity to run all of it under load. None of that shows up in the UI AI is imitating.
+To be clear, I don't think that AI has removed any moat though, it still exists. Before we just had to spend lots of time and effort to swim across, where now AI has provided us a raft to get across with much less effort. So many of the vibe-coders get to the other side and ask "Now what?". You can follow the SDLC and make sure that feature or idea you built is a little more sound, but if you are asking AI to review itself it will not ask the big questions. The hard substrate of software is the part you cannot screenshot. It includes rich entity graphs and messy real-world relationships, invariants that encode domain semantics, compliance and auditability, and the operational maturity to run all of it under load. None of that shows up in the UI that AI is imitating.
 
 The question to ask is no longer whether AI can imitate your app, because it can, but instead ask "Why would customers still use your underlying system instead of building their own?"
 
 ## What Survives Is the Substrate
 
-If AI copies the skin, the durable value has to live in the skeleton. The screens, flows, and prompts are the easy part to reproduce. The invisible layer underneath is where SaaS still has a chance to matter.
+If AI copies the skin, the durable value has to live in the skeleton. 
 
 That starts with shared truth. Serious products encode canonical records and an entity graph. Identity holds over time. Relationships cross domains. Ownership, lineage, and policy inheritance all have to mean something. The deeper a system understands how objects relate, the more useful it becomes to humans and agents. A clone can mimic the interface. It cannot inherit years of accumulated and reconciled state.
 

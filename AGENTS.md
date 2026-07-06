@@ -29,13 +29,23 @@ Primary source areas:
 When the user asks to **start locally**, **run the dev server**, or **preview the site**, start Astro dev on Node 24.
 
 1. Check whether a server is already running on port `4321` (for example `lsof -i :4321`). If yes, report the URL and do not start a second instance.
-2. From the repo root, run this in the background:
+2. From the repo root, run:
 
 ```bash
-source ~/.nvm/nvm.sh 2>/dev/null; nvm use 24 && if [ ! -d node_modules ]; then npm ci; fi && npm start
+nvm i
+npm start
 ```
 
-3. Wait for `Local http://localhost:4321/` in the output, then tell the user the site is ready at **http://localhost:4321/**.
+3. Wait for either `Local http://localhost:4321/` or `Dev server running at http://localhost:4321` in the output, then tell the user the site is ready at **http://localhost:4321/**.
+
+In Codex, this may need escalation outside the filesystem sandbox because Astro writes preference/cache files under `~/Library/Preferences/astro` even when telemetry is disabled. If sandboxed startup fails with `EPERM: operation not permitted, mkdir '/Users/.../Library/Preferences/astro'` or `Dev server process exited before becoming ready`, rerun `npm start` with escalation. A successful daemonized start prints:
+
+```text
+Dev server running at http://localhost:4321 (pid <pid>)
+  Stop:   astro dev stop
+  Status: astro dev status
+  Logs:   astro dev logs
+```
 
 `npm start` runs `astro dev`. See [Commands](#commands) for build, validate, and preview.
 
