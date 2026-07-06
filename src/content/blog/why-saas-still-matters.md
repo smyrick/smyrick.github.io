@@ -1,7 +1,7 @@
 ---
 title: 'When and Why SaaS Still Matters in the Age of Personal AI'
 description: 'If AI commoditizes the surface of software where does SaaS endure as a layered substrate of data, APIs, hooks, runtime, and governance.'
-date: 2026-06-08
+date: 2026-07-06
 draft: false
 path: '/blog/why-saas-still-matters'
 type: 'post'
